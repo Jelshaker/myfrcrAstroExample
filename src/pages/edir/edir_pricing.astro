@@ -14,6 +14,55 @@ import Footer from '../../components/footer.astro';
   ]} />
 
   <main class="has-subnav">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg-pattern">
+        <div class="hero-gradient-1"></div>
+        <div class="hero-gradient-2"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-inner">
+          <h1 class="hero-title">
+            EDiR Pricing
+            <span class="hero-title-gradient">Premium Access, Unbeatable Value</span>
+          </h1>
+          <p class="hero-description">
+            Everything you need to pass your EDiR examinations. Access 2,000+ real clinical cases, 600+ full core questions, and full diagnostic workstation quality DICOM viewer — all at an affordable price.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-card"><p class="stat-card-text">2,000+ Clinical Cases</p></div>
+            <div class="stat-card"><p class="stat-card-text">600+ Core Questions</p></div>
+            <div class="stat-card"><p class="stat-card-text">Full DICOM Viewer</p></div>
+            <div class="stat-card"><p class="stat-card-text">100% Radiologist-Created</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">2,000+</div>
+            <div class="stat-label">Clinical Cases</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">600+</div>
+            <div class="stat-label">Core Questions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">>500GB</div>
+            <div class="stat-label">Medical Imaging</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Radiologist-Created</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Pricing Section -->
     <section class="pricing-section" id="pricing">
       <div class="container">
@@ -55,6 +104,52 @@ import Footer from '../../components/footer.astro';
         <p class="pricing-disclaimer">
           No automatic renewal. This is a one-time payment &mdash; you will not be charged again unless you choose to resubscribe.
         </p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <h6 class="about-label">About EDiR Pricing</h6>
+            <h2 class="about-title">Invest in Your EDiR Success</h2>
+            <p class="about-desc" style="margin-top: 1rem;">
+              Our EDiR exam preparation platform provides the most comprehensive revision resource available for the European Diploma in Radiology examinations. With thousands of clinical cases, full lossless DICOM images, and expert-created content, you get exceptional value designed to help you succeed on your EDiR exams.
+            </p>
+            <div class="about-stats-grid" style="margin-top: 1.5rem;">
+              <div class="about-stat-card">
+                <h4 class="about-stat-number">2,000+ Cases</h4>
+                <p class="about-stat-desc">Extensive clinical case bank covering all EDiR exam components.</p>
+              </div>
+              <div class="about-stat-card">
+                <h4 class="about-stat-number">Expert-Created</h4>
+                <p class="about-stat-desc">Authored by experienced consultant radiologists.</p>
+              </div>
+            </div>
+            <div class="about-stats-grid" style="margin-top: 1rem;">
+              <div class="about-stat-card">
+                <h4 class="about-stat-number">Full DICOM Quality</h4>
+                <p class="about-stat-desc">Diagnostic workstation quality images for authentic practice.</p>
+              </div>
+              <div class="about-stat-card">
+                <h4 class="about-stat-number">31-Day Access</h4>
+                <p class="about-stat-desc">Full access to all content with no automatic renewal.</p>
+              </div>
+            </div>
+            <a href="/contact" class="read-more-link" style="margin-top: 1.5rem;">
+              <span>Contact Us</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="width: 100%; max-width: 564px; background: var(--color-gray-100); border-radius: var(--radius-2xl); border: 1px solid var(--color-gray-200); padding: 1.25rem;">
+              <img src="/assets/myEDiRlogo lowercase.png" alt="EDiR Platform" style="width: 100%; height: auto; border-radius: var(--radius-2xl); object-fit: cover;" />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
