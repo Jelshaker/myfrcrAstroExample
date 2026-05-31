@@ -1,13 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/navbar.astro';
+import Subnav from '../../components/subnav.astro';
 import Footer from '../../components/footer.astro';
 ---
 
-<Layout title="FRCR Part 2B - MyFRCR.com" theme="myfrcr">
+<Layout title="FRCR Part A Physics - MyFRCR.com" theme="myfrcr">
   <Navbar />
+  <Subnav links={[
+    { label: 'Part A Physics', href: '/myfrcr/myfrcrpart1a' },
+    { label: 'Part 2A', href: '/myfrcr/myfrcrpart2a' },
+    { label: 'Part 2B Shorts & Long Cases', href: '/myfrcr/myfrcrpart2b' },
+  ]} />
 
-  <main>
+  <main class="has-subnav">
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-bg-pattern">
