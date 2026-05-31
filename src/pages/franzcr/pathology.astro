@@ -161,7 +161,7 @@ import Footer from '../../components/footer.astro';
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing-section">
+    <section class="pricing-section" id="pricing">
       <div class="container">
         <h2 class="section-title text-center">Pricing</h2>
         <p class="section-subtitle">Everything you need to pass your FRANZCR pathology exams</p>
@@ -204,300 +204,26 @@ import Footer from '../../components/footer.astro';
       </div>
     </section>
 
-  </main>
-
-  <Footer />
-</Layout>
-
-<write_to_file>
-<path>src/pages/franzcr/case-reporting.astro</path>
-<content>---
-import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../components/navbar.astro';
-import Footer from '../../components/footer.astro';
----
-
-<Layout title="FRANZCR Case Reporting - MyFRCR.com" theme="franzcr">
-  <Navbar />
-
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-bg-pattern">
-        <div class="hero-gradient-1"></div>
-        <div class="hero-gradient-2"></div>
-      </div>
-      <div class="hero-content">
-        <div class="hero-inner">
-          <h1 class="hero-title">
-            FRANZCR
-            <span class="hero-title-gradient">Case Reporting Examination</span>
-          </h1>
-          <p class="hero-description">
-            Authentic case reporting scenarios with full lossless DICOM images, simulating 
-            the clinical written paper with examiner-style marking and feedback. The Case 
-            Reporting Examination serves as the core of FRANZCR preparation.
-          </p>
-          <div class="hero-stats">
-            <div class="stat-card"><p class="stat-card-text">2,000+ Clinical Cases</p></div>
-            <div class="stat-card"><p class="stat-card-text">Full DICOM Quality</p></div>
-            <div class="stat-card"><p class="stat-card-text">7 RANZCR Stations</p></div>
-            <div class="stat-card"><p class="stat-card-text">Examiner Feedback</p></div>
-          </div>
-          <div class="hero-actions">
-            <a href="#pricing" class="btn-hero">
-              View Pricing
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-            <a href="#about" class="btn-hero-outline">
-              Learn More
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 24 24" height="32" width="32">
-                <path fill="none" d="M0 0h24v24H0V0z"></path>
-                <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="hero-scroll">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-number">2,000+</div>
-            <div class="stat-label">Clinical Cases</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">7</div>
-            <div class="stat-label">RANZCR Stations</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">DICOM Quality</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">Real-Time</div>
-            <div class="stat-label">Examiner Feedback</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Case Reporting Overview Section -->
-    <section class="section section-white">
-      <div class="container">
-        <div class="content-grid">
-          <div class="content-text">
-            <h2>Case Reporting Overview</h2>
-            <p>
-              The Case Reporting Examination serves as the core of the platform's FRANZCR 
-              preparation, simulating the high difficulty "clinical" written paper of the 
-              examination. These cases are designed to test your clinical acumen through a 
-              structured exam delivery&mdash;from initial image interpretation and differential 
-              diagnosis to final management decisions.
-            </p>
-            <ul class="content-list">
-              <li><strong>Full Lossless DICOM Images</strong> &mdash; Diagnostic workstation quality following RANZCR PACS guidelines</li>
-              <li><strong>Multimodal Integration</strong> &mdash; Seamless transition between CT, MRI, and PET</li>
-              <li><strong>Curriculum-Aligned</strong> &mdash; Every case aligned with the RANZCR Clinical Radiology Training Program</li>
-              <li><strong>Exam Simulation</strong> &mdash; Practice with dedicated interface mimicking the electronic delivery of the actual examination</li>
-            </ul>
-          </div>
-          <div>
-            <div class="features-grid" style="grid-template-columns: 1fr;">
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <svg stroke="currentColor" fill="currentColor" viewBox="0 0 24 24"><path d="M18.435,3.06H5.565a2.5,2.5,0,0,0-2.5,2.5v8.88a2.507,2.507,0,0,0,2.5,2.5h2.91l-.37,3H7a.5.5,0,0,0,0,1h10.01a.5.5,0,0,0,0-1H15.9l-.37-3h2.91a2.507,2.507,0,0,0,2.5-2.5V5.56A2.5,2.5,0,0,0,18.435,3.06Z"/></svg>
-                </div>
-                <h3 class="feature-title">Multimodal Integration</h3>
-                <p class="feature-desc">Seamless transition between CT, MRI, and PET, mirroring the RANZCR digital examination platform workflow.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Case Types Section -->
-    <section class="offer-section">
-      <div class="container">
-        <div class="content-grid">
-          <div>
-            <div class="offer-header">
-              <span>Exam Structure</span>
-            </div>
-            <h2 class="offer-title">Case Types</h2>
-            <ul class="content-list">
-              <li><strong>Short Cases</strong> &mdash; 20 Questions &bull; 3 Marks per question</li>
-              <li><strong>Medium Cases</strong> &mdash; 10 Questions &bull; 6 Marks per question</li>
-              <li><strong>Long Cases</strong> &mdash; 5 Questions &bull; 12 Marks per question</li>
-            </ul>
-          </div>
-          <div>
-            <div class="offer-header">
-              <span>Domains Tested</span>
-            </div>
-            <h2 class="offer-title">Assessment Domains</h2>
-            <div class="subspecialty-grid">
-              <div class="subspecialty-item">Intrinsic Roles</div>
-              <div class="subspecialty-item">Observation</div>
-              <div class="subspecialty-item">Interpretation</div>
-              <div class="subspecialty-item">Management</div>
-              <div class="subspecialty-item">Pathology</div>
-              <div class="subspecialty-item">Anatomy</div>
-              <div class="subspecialty-item">AIT / Patient Safety</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stations Section -->
-    <section class="section section-gray">
-      <div class="container">
-        <div class="text-center">
-          <div class="offer-header" style="justify-content: center;">
-            <span>Exam Stations</span>
-          </div>
-          <h2 class="offer-title">RANZCR Clinical Stations</h2>
-          <p class="section-subtitle">Comprehensive coverage across all seven mandatory stations.</p>
-        </div>
-        <div class="subspecialty-grid" style="max-width: 36rem; margin: 0 auto;">
-          <div class="subspecialty-item">Abdominal (20%)</div>
-          <div class="subspecialty-item">Neuroradiology / Head & Neck (15%)</div>
-          <div class="subspecialty-item">Thoracic & Cardiovascular (15%)</div>
-          <div class="subspecialty-item">Breast (5%)</div>
-          <div class="subspecialty-item">Obstetrics & Gynaecology (5%)</div>
-          <div class="subspecialty-item">Musculoskeletal (20%)</div>
-          <div class="subspecialty-item">Paediatrics (20%)</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section section-white">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-title">Key Features</h2>
-          <p class="section-subtitle">Everything you need for comprehensive case reporting practice</p>
-        </div>
-        <div class="features-grid" style="margin-top: 2rem;">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 24 24"><path d="M18.435,3.06H5.565a2.5,2.5,0,0,0-2.5,2.5v8.88a2.507,2.507,0,0,0,2.5,2.5h2.91l-.37,3H7a.5.5,0,0,0,0,1h10.01a.5.5,0,0,0,0-1H15.9l-.37-3h2.91a2.507,2.507,0,0,0,2.5-2.5V5.56A2.5,2.5,0,0,0,18.435,3.06Z"/></svg>
-            </div>
-            <h3 class="feature-title">Multimodal Integration</h3>
-            <p class="feature-desc">Seamless transition between CT, MRI, and PET, mirroring the RANZCR digital examination platform workflow.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 24 24"><path d="M5 8.999c0 1.902.765 3.627 2 4.89V21a.998.998 0 0 0 1.447.895L12 20.118l3.553 1.776a.992.992 0 0 0 .972-.043c.295-.183.475-.504.475-.851v-7.11a6.976 6.976 0 0 0 2-4.891C19 5.14 15.86 2 12 2S5 5.14 5 8.999z"/></svg>
-            </div>
-            <h3 class="feature-title">Curriculum-Aligned</h3>
-            <p class="feature-desc">Every case aligned with the RANZCR Clinical Radiology Training Program across all seven mandatory stations.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 32 32"><path d="M16 27.534c-5.323 0-9.641-1.44-9.641-3.214 0-0.97 0-2.031 0-3.214 0-0.279 0.14-0.545 0.341-0.803 1.075 1.384 4.813 2.41 9.301 2.41s8.226-1.026 9.301-2.41c0.201 0.259 0.34 0.524 0.34 0.803 0 0.931 0 1.918 0 3.214 0 1.773-4.318 3.214-9.641 3.214z"/></svg>
-            </div>
-            <h3 class="feature-title">Diagnostic Precision</h3>
-            <p class="feature-desc">Powered by lossless DICOM viewer to pan, zoom, and window through stacks to identify critical findings.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 24 24"><path d="m10 10.414 4 4 5.707-5.707L22 11V5h-6l2.293 2.293L14 11.586l-4-4-7.707 7.707 1.414 1.414z"/></svg>
-            </div>
-            <h3 class="feature-title">Exam Simulation</h3>
-            <p class="feature-desc">Practice with dedicated interface mimicking the electronic delivery of the actual examination.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing-section" id="pricing">
-      <div class="container">
-        <h2 class="section-title text-center">Pricing</h2>
-        <p class="section-subtitle">Everything you need to pass your FRANZCR case reporting</p>
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <div class="pricing-subtitle">Premium Access</div>
-            <div class="pricing-price">A$100</div>
-            <p style="color: var(--color-gray-600); margin-top: 0.5rem;">31 days of full access</p>
-          </div>
-          <ul class="pricing-features">
-            <li class="pricing-feature">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
-              <div><span class="pricing-feature-title">2,000+ Clinical Cases</span></div>
-            </li>
-            <li class="pricing-feature">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
-              <div><span class="pricing-feature-title">Full Lossless DICOM</span></div>
-            </li>
-            <li class="pricing-feature">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
-              <div><span class="pricing-feature-title">Unlimited Practice</span></div>
-            </li>
-            <li class="pricing-feature">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
-              <div><span class="pricing-feature-title">Examiner-style marking and explanations</span></div>
-            </li>
-            <li class="pricing-feature">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
-              <div><span class="pricing-feature-title">Full diagnostic workstation quality DICOM Viewer</span></div>
-            </li>
-          </ul>
-          <div class="pricing-separator"></div>
-          <p style="text-align: center; font-weight: 600; color: var(--color-gray-700);">Secure Payment</p>
-          <button class="pricing-cta">Get Started</button>
-          <p class="pricing-footer-text">Cancel anytime &bull; No automatic renewal</p>
-        </div>
-        <p class="pricing-disclaimer">
-          No automatic renewal. This is a one-time payment &mdash; you will not be charged again unless you choose to resubscribe.
-        </p>
-      </div>
-    </section>
-
     <!-- About Section -->
     <section class="about-section" id="about">
       <div class="container">
         <div class="about-grid">
           <div>
-            <h6 class="about-label">About Case Reporting</h6>
-            <h2 class="about-title">Why Case Reporting Matters</h2>
+            <h6 class="about-label">About FRANZCR Pathology</h6>
+            <h2 class="about-title">Comprehensive Pathology Preparation</h2>
             <p class="about-desc" style="margin-top: 1rem;">
-              The Case Reporting Examination is the most challenging component of the FRANZCR 
-              Phase 2 exam. Our platform provides authentic practice with thousands of high-quality 
-              clinical cases featuring full lossless DICOM images, mirroring the actual examination 
-              experience.
+              Our FRANZCR pathology resource is designed to provide thorough coverage of the RANZCR 
+              pathology curriculum. With thousands of carefully crafted MCQ and SAQ questions, you 
+              can build a deep understanding of pathology as it relates to radiology practice.
             </p>
             <div class="about-stats-grid" style="margin-top: 1.5rem;">
               <div class="about-stat-card">
-                <h4 class="about-stat-number">Thousands of DICOM Studies</h4>
-                <p class="about-stat-desc">A vast library of radiographs, CT, and MRI studies in full lossless DICOM format.</p>
+                <h4 class="about-stat-number">3,500+ Questions</h4>
+                <p class="about-stat-desc">Comprehensive pathology question bank covering all key topics.</p>
               </div>
               <div class="about-stat-card">
-                <h4 class="about-stat-number">Enterprise Infrastructure</h4>
-                <p class="about-stat-desc">Custom DICOM viewer powered by enterprise cloud infrastructure.</p>
-              </div>
-            </div>
-            <div class="about-stats-grid" style="margin-top: 1rem;">
-              <div class="about-stat-card">
-                <h4 class="about-stat-number">RANZCR Guidelines Compliant</h4>
-                <p class="about-stat-desc">Following international PACS display guidelines for diagnostic workstations.</p>
-              </div>
-              <div class="about-stat-card">
-                <h4 class="about-stat-number">100% Human-Made</h4>
-                <p class="about-stat-desc">All clinical cases authored by expert human consultant radiologists.</p>
+                <h4 class="about-stat-number">Expert-Created</h4>
+                <p class="about-stat-desc">Authored by experienced consultant radiologists.</p>
               </div>
             </div>
             <a href="/contact" class="read-more-link" style="margin-top: 1.5rem;">

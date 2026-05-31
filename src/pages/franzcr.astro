@@ -1,13 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar.astro';
+import Subnav from '../components/subnav.astro';
 import Footer from '../components/footer.astro';
 ---
 
 <Layout title="FRANZCR - MyFRCR.com" theme="franzcr">
   <Navbar />
+  <Subnav links={[
+    { label: 'Pathology MCQ & SAQ', href: '/franzcr/pathology' },
+    { label: 'Phase 2 MCQ', href: '/franzcr/phase2-mcq' },
+    { label: 'Case Reporting', href: '/franzcr/case-reporting' },
+  ]} />
 
-  <main>
+  <main class="has-subnav">
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-bg-pattern">
@@ -78,7 +84,7 @@ import Footer from '../components/footer.astro';
     </section>
 
     <!-- What is Phase2Radiology Section -->
-    <section class="section section-white">
+    <section class="section section-white" id="what-is-phase2">
       <div class="container">
         <div class="content-grid">
           <div class="content-text">
@@ -106,7 +112,7 @@ import Footer from '../components/footer.astro';
     </section>
 
     <!-- Case Reporting Section -->
-    <section class="section section-gray">
+    <section class="section section-gray" id="case-reporting">
       <div class="container">
         <h2 class="section-title text-center">Case Reporting Examination</h2>
         <p class="section-subtitle">
@@ -146,7 +152,7 @@ import Footer from '../components/footer.astro';
     </section>
 
     <!-- Exam Structure Section -->
-    <section class="offer-section">
+    <section class="offer-section" id="exam-structure">
       <div class="container">
         <div class="content-grid">
           <div>
@@ -180,7 +186,7 @@ import Footer from '../components/footer.astro';
     </section>
 
     <!-- Stations Section -->
-    <section class="section section-gray">
+    <section class="section section-gray" id="stations">
       <div class="container">
         <div class="text-center">
           <div class="offer-header" style="justify-content: center;">
@@ -202,7 +208,7 @@ import Footer from '../components/footer.astro';
     </section>
 
     <!-- Question Types Section -->
-    <section class="section section-white">
+    <section class="section section-white" id="question-types">
       <div class="container">
         <div class="text-center">
           <div class="offer-header" style="justify-content: center;">
