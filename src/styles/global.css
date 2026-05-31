@@ -1205,6 +1205,407 @@ button {
   margin: 2rem 0;
 }
 
+/* ============================================
+   Page Themes - Custom Colours for Each Brand
+   Controlled via data-theme attribute on <body>
+   ============================================ */
+
+/* --- myFRCR: Light Blue, Pink, Purple --- */
+[data-theme="myfrcr"] .hero {
+  background: linear-gradient(to bottom right, #0d1b3e, #2d1b69, #4a1942);
+}
+[data-theme="myfrcr"] .hero-gradient-1 {
+  background: rgba(147, 197, 253, 0.3);
+}
+[data-theme="myfrcr"] .hero-gradient-2 {
+  background: rgba(216, 180, 254, 0.25);
+}
+[data-theme="myfrcr"] .hero-title-gradient {
+  background: linear-gradient(135deg, #93c5fd, #f9a8d4, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="myfrcr"] .btn-hero,
+[data-theme="myfrcr"] .btn-primary,
+[data-theme="myfrcr"] .pricing-cta {
+  background: linear-gradient(135deg, #c084fc, #f9a8d4);
+}
+[data-theme="myfrcr"] .btn-hero:hover,
+[data-theme="myfrcr"] .btn-primary:hover,
+[data-theme="myfrcr"] .pricing-cta:hover {
+  background: linear-gradient(135deg, #a855f7, #f472b6);
+  box-shadow: 0 20px 25px -5px rgba(192, 132, 252, 0.5);
+}
+[data-theme="myfrcr"] .btn-hero-outline {
+  border-color: rgba(192, 132, 252, 0.5);
+}
+[data-theme="myfrcr"] .btn-hero-outline:hover {
+  background-color: rgba(192, 132, 252, 0.15);
+  border-color: #c084fc;
+}
+[data-theme="myfrcr"] .stat-card:hover {
+  border-color: rgba(192, 132, 252, 0.4);
+  box-shadow: 0 20px 25px -5px rgba(192, 132, 252, 0.25);
+}
+[data-theme="myfrcr"] .stat-number {
+  background: linear-gradient(to bottom right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="myfrcr"] .stat-item:hover {
+  border-color: rgba(192, 132, 252, 0.4);
+}
+[data-theme="myfrcr"] .pricing-card {
+  border-color: #c084fc;
+}
+[data-theme="myfrcr"] .pricing-price,
+[data-theme="myfrcr"] .check-item svg,
+[data-theme="myfrcr"] .pricing-feature svg,
+[data-theme="myfrcr"] .feature-icon svg {
+  color: #a855f7;
+}
+[data-theme="myfrcr"] .feature-icon {
+  background: #f3e8ff;
+}
+[data-theme="myfrcr"] .dropdown-item:hover {
+  color: #a855f7;
+}
+[data-theme="myfrcr"] .footer-stat-value {
+  color: #c084fc;
+}
+
+/* --- EDiR: Blue and Yellow --- */
+[data-theme="edir"] .hero {
+  background: linear-gradient(to bottom right, #0f172a, #1e3a5f, #3b524b);
+}
+[data-theme="edir"] .hero-gradient-1 {
+  background: rgba(59, 130, 246, 0.3);
+}
+[data-theme="edir"] .hero-gradient-2 {
+  background: rgba(234, 179, 8, 0.2);
+}
+[data-theme="edir"] .hero-title-gradient {
+  background: linear-gradient(135deg, #60a5fa, #facc15, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="edir"] .btn-hero,
+[data-theme="edir"] .btn-primary,
+[data-theme="edir"] .pricing-cta {
+  background: linear-gradient(135deg, #3b82f6, #eab308);
+}
+[data-theme="edir"] .btn-hero:hover,
+[data-theme="edir"] .btn-primary:hover,
+[data-theme="edir"] .pricing-cta:hover {
+  background: linear-gradient(135deg, #2563eb, #ca8a04);
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.5);
+}
+[data-theme="edir"] .btn-hero-outline {
+  border-color: rgba(234, 179, 8, 0.5);
+}
+[data-theme="edir"] .btn-hero-outline:hover {
+  background-color: rgba(234, 179, 8, 0.15);
+  border-color: #eab308;
+}
+[data-theme="edir"] .stat-card:hover {
+  border-color: rgba(234, 179, 8, 0.4);
+  box-shadow: 0 20px 25px -5px rgba(234, 179, 8, 0.2);
+}
+[data-theme="edir"] .stat-number {
+  background: linear-gradient(to bottom right, #3b82f6, #eab308);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="edir"] .stat-item:hover {
+  border-color: rgba(234, 179, 8, 0.4);
+}
+[data-theme="edir"] .pricing-card {
+  border-color: #eab308;
+}
+[data-theme="edir"] .pricing-price,
+[data-theme="edir"] .check-item svg,
+[data-theme="edir"] .pricing-feature svg,
+[data-theme="edir"] .feature-icon svg {
+  color: #3b82f6;
+}
+[data-theme="edir"] .feature-icon {
+  background: #dbeafe;
+}
+[data-theme="edir"] .dropdown-item:hover {
+  color: #eab308;
+}
+[data-theme="edir"] .footer-stat-value {
+  color: #eab308;
+}
+
+/* --- FRANZCR: Yellow and Green --- */
+[data-theme="franzcr"] .hero {
+  background: linear-gradient(to bottom right, #0f172a, #1a3a2a, #2d4a1a);
+}
+[data-theme="franzcr"] .hero-gradient-1 {
+  background: rgba(234, 179, 8, 0.3);
+}
+[data-theme="franzcr"] .hero-gradient-2 {
+  background: rgba(34, 197, 94, 0.2);
+}
+[data-theme="franzcr"] .hero-title-gradient {
+  background: linear-gradient(135deg, #facc15, #22c55e, #eab308);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="franzcr"] .btn-hero,
+[data-theme="franzcr"] .btn-primary,
+[data-theme="franzcr"] .pricing-cta {
+  background: linear-gradient(135deg, #eab308, #22c55e);
+}
+[data-theme="franzcr"] .btn-hero:hover,
+[data-theme="franzcr"] .btn-primary:hover,
+[data-theme="franzcr"] .pricing-cta:hover {
+  background: linear-gradient(135deg, #ca8a04, #16a34a);
+  box-shadow: 0 20px 25px -5px rgba(234, 179, 8, 0.5);
+}
+[data-theme="franzcr"] .btn-hero-outline {
+  border-color: rgba(34, 197, 94, 0.5);
+}
+[data-theme="franzcr"] .btn-hero-outline:hover {
+  background-color: rgba(34, 197, 94, 0.15);
+  border-color: #22c55e;
+}
+[data-theme="franzcr"] .stat-card:hover {
+  border-color: rgba(34, 197, 94, 0.4);
+  box-shadow: 0 20px 25px -5px rgba(34, 197, 94, 0.25);
+}
+[data-theme="franzcr"] .stat-number {
+  background: linear-gradient(to bottom right, #eab308, #22c55e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="franzcr"] .stat-item:hover {
+  border-color: rgba(34, 197, 94, 0.4);
+}
+[data-theme="franzcr"] .pricing-card {
+  border-color: #22c55e;
+}
+[data-theme="franzcr"] .pricing-price,
+[data-theme="franzcr"] .check-item svg,
+[data-theme="franzcr"] .pricing-feature svg,
+[data-theme="franzcr"] .feature-icon svg {
+  color: #16a34a;
+}
+[data-theme="franzcr"] .feature-icon {
+  background: #dcfce7;
+}
+[data-theme="franzcr"] .dropdown-item:hover {
+  color: #16a34a;
+}
+[data-theme="franzcr"] .footer-stat-value {
+  color: #22c55e;
+}
+
+/* --- EDiR Diplomas: Red, Orange and Yellow --- */
+[data-theme="edirdiplomas"] .hero {
+  background: linear-gradient(to bottom right, #1f0a0a, #3d1a0a, #2d2a0a);
+}
+[data-theme="edirdiplomas"] .hero-gradient-1 {
+  background: rgba(239, 68, 68, 0.3);
+}
+[data-theme="edirdiplomas"] .hero-gradient-2 {
+  background: rgba(249, 115, 22, 0.25);
+}
+[data-theme="edirdiplomas"] .hero-title-gradient {
+  background: linear-gradient(135deg, #ef4444, #f97316, #eab308);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="edirdiplomas"] .btn-hero,
+[data-theme="edirdiplomas"] .btn-primary,
+[data-theme="edirdiplomas"] .pricing-cta {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+}
+[data-theme="edirdiplomas"] .btn-hero:hover,
+[data-theme="edirdiplomas"] .btn-primary:hover,
+[data-theme="edirdiplomas"] .pricing-cta:hover {
+  background: linear-gradient(135deg, #dc2626, #ea580c);
+  box-shadow: 0 20px 25px -5px rgba(239, 68, 68, 0.5);
+}
+[data-theme="edirdiplomas"] .btn-hero-outline {
+  border-color: rgba(249, 115, 22, 0.5);
+}
+[data-theme="edirdiplomas"] .btn-hero-outline:hover {
+  background-color: rgba(249, 115, 22, 0.15);
+  border-color: #f97316;
+}
+[data-theme="edirdiplomas"] .stat-card:hover {
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.25);
+}
+[data-theme="edirdiplomas"] .stat-number {
+  background: linear-gradient(to bottom right, #ef4444, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="edirdiplomas"] .stat-item:hover {
+  border-color: rgba(249, 115, 22, 0.4);
+}
+[data-theme="edirdiplomas"] .pricing-card {
+  border-color: #f97316;
+}
+[data-theme="edirdiplomas"] .pricing-price,
+[data-theme="edirdiplomas"] .check-item svg,
+[data-theme="edirdiplomas"] .pricing-feature svg,
+[data-theme="edirdiplomas"] .feature-icon svg {
+  color: #ea580c;
+}
+[data-theme="edirdiplomas"] .feature-icon {
+  background: #fff7ed;
+}
+[data-theme="edirdiplomas"] .dropdown-item:hover {
+  color: #ea580c;
+}
+[data-theme="edirdiplomas"] .footer-stat-value {
+  color: #f97316;
+}
+
+/* --- RCPSC: White and Red --- */
+[data-theme="rcpsc"] .hero {
+  background: linear-gradient(to bottom right, #1a0a0a, #2d1414, #0f0f1a);
+}
+[data-theme="rcpsc"] .hero-gradient-1 {
+  background: rgba(255, 255, 255, 0.15);
+}
+[data-theme="rcpsc"] .hero-gradient-2 {
+  background: rgba(239, 68, 68, 0.25);
+}
+[data-theme="rcpsc"] .hero-title-gradient {
+  background: linear-gradient(135deg, #ffffff, #ef4444, #fca5a5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="rcpsc"] .btn-hero,
+[data-theme="rcpsc"] .btn-primary,
+[data-theme="rcpsc"] .pricing-cta {
+  background: linear-gradient(135deg, #ffffff, #ef4444);
+}
+[data-theme="rcpsc"] .btn-hero:hover,
+[data-theme="rcpsc"] .btn-primary:hover,
+[data-theme="rcpsc"] .pricing-cta:hover {
+  background: linear-gradient(135deg, #e5e7eb, #dc2626);
+  box-shadow: 0 20px 25px -5px rgba(239, 68, 68, 0.5);
+}
+[data-theme="rcpsc"] .btn-hero-outline {
+  border-color: rgba(239, 68, 68, 0.5);
+}
+[data-theme="rcpsc"] .btn-hero-outline:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+}
+[data-theme="rcpsc"] .stat-card:hover {
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 20px 25px -5px rgba(239, 68, 68, 0.25);
+}
+[data-theme="rcpsc"] .stat-number {
+  background: linear-gradient(to bottom right, #ffffff, #ef4444);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="rcpsc"] .stat-item:hover {
+  border-color: rgba(239, 68, 68, 0.4);
+}
+[data-theme="rcpsc"] .pricing-card {
+  border-color: #ef4444;
+}
+[data-theme="rcpsc"] .pricing-price,
+[data-theme="rcpsc"] .check-item svg,
+[data-theme="rcpsc"] .pricing-feature svg,
+[data-theme="rcpsc"] .feature-icon svg {
+  color: #ef4444;
+}
+[data-theme="rcpsc"] .feature-icon {
+  background: #fef2f2;
+}
+[data-theme="rcpsc"] .dropdown-item:hover {
+  color: #ef4444;
+}
+[data-theme="rcpsc"] .footer-stat-value {
+  color: #fca5a5;
+}
+
+/* --- ABR: Red, White and Blue --- */
+[data-theme="abr"] .hero {
+  background: linear-gradient(to bottom right, #0a0f2a, #1a142d, #2d0a0a);
+}
+[data-theme="abr"] .hero-gradient-1 {
+  background: rgba(239, 68, 68, 0.25);
+}
+[data-theme="abr"] .hero-gradient-2 {
+  background: rgba(59, 130, 246, 0.25);
+}
+[data-theme="abr"] .hero-title-gradient {
+  background: linear-gradient(135deg, #ef4444, #ffffff, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="abr"] .btn-hero,
+[data-theme="abr"] .btn-primary,
+[data-theme="abr"] .pricing-cta {
+  background: linear-gradient(135deg, #ef4444, #3b82f6);
+}
+[data-theme="abr"] .btn-hero:hover,
+[data-theme="abr"] .btn-primary:hover,
+[data-theme="abr"] .pricing-cta:hover {
+  background: linear-gradient(135deg, #dc2626, #2563eb);
+  box-shadow: 0 20px 25px -5px rgba(239, 68, 68, 0.5);
+}
+[data-theme="abr"] .btn-hero-outline {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+[data-theme="abr"] .btn-hero-outline:hover {
+  background-color: rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
+}
+[data-theme="abr"] .stat-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.25);
+}
+[data-theme="abr"] .stat-number {
+  background: linear-gradient(to bottom right, #ef4444, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="abr"] .stat-item:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+[data-theme="abr"] .pricing-card {
+  border-color: #3b82f6;
+}
+[data-theme="abr"] .pricing-price,
+[data-theme="abr"] .check-item svg,
+[data-theme="abr"] .pricing-feature svg,
+[data-theme="abr"] .feature-icon svg {
+  color: #2563eb;
+}
+[data-theme="abr"] .feature-icon {
+  background: #eff6ff;
+}
+[data-theme="abr"] .dropdown-item:hover {
+  color: #dc2626;
+}
+[data-theme="abr"] .footer-stat-value {
+  color: #fca5a5;
+}
+
 /* --- Animations --- */
 @keyframes pulse-slow {
   0%, 100% { opacity: 1; }

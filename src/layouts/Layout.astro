@@ -3,9 +3,10 @@ import '../styles/global.css';
 
 export interface Props {
   title?: string;
+  theme?: string;
 }
 
-const { title = 'MyFRCR.com - Radiology Exam Platform Family' } = Astro.props;
+const { title = 'MyFRCR.com - Radiology Exam Platform Family', theme = 'default' } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,7 +20,7 @@ const { title = 'MyFRCR.com - Radiology Exam Platform Family' } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
-  <body>
+  <body data-theme={theme}>
     <slot />
 
     <script>
@@ -50,4 +51,3 @@ const { title = 'MyFRCR.com - Radiology Exam Platform Family' } = Astro.props;
     </script>
   </body>
 </html>
-</write_to_file>
