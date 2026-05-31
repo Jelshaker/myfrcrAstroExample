@@ -246,6 +246,12 @@ button {
   color: var(--color-blue-600);
 }
 
+.dropdown-menu-wide {
+  min-width: 220px;
+  column-count: 2;
+  column-gap: 0;
+}
+
 .nav-auth {
   display: flex;
   align-items: center;
