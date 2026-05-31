@@ -35,7 +35,7 @@ import Footer from '../../components/footer.astro';
             <div class="stat-card"><p class="stat-card-text">100% Radiologist-Created</p></div>
           </div>
           <div class="hero-actions">
-            <a href="/abr/abr_pricing" class="btn-hero">
+            <a href={`${import.meta.env.BASE_URL}abr/abr_pricing`} class="btn-hero">
               View Pricing
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -100,10 +100,10 @@ import Footer from '../../components/footer.astro';
           </div>
           <div>
             <div class="content-images grid-2x2">
-              <img src="/assets/myABRcorelogo.png" alt="ABR Core" />
-              <img src="/assets/myfrcrlogo.png" alt="MyFRCR" />
-              <img src="/assets/myEDiRlogo lowercase.png" alt="EDiR" />
-              <img src="/assets/myRCPSClogo.png" alt="RCPSC" />
+              <img src={`${import.meta.env.BASE_URL}assets/myABRcorelogo.png`} alt="ABR Core" />
+              <img src={`${import.meta.env.BASE_URL}assets/myfrcrlogo.png`} alt="MyFRCR" />
+              <img src={`${import.meta.env.BASE_URL}assets/myEDiRlogo lowercase.png`} alt="EDiR" />
+              <img src={`${import.meta.env.BASE_URL}assets/myRCPSClogo.png`} alt="RCPSC" />
             </div>
           </div>
         </div>
@@ -253,7 +253,7 @@ import Footer from '../../components/footer.astro';
                 <p class="about-stat-desc">All clinical cases authored by expert human consultant radiologists.</p>
               </div>
             </div>
-            <a href="/contact" class="read-more-link" style="margin-top: 1.5rem;">
+            <a href={`${import.meta.env.BASE_URL}contact`} class="read-more-link" style="margin-top: 1.5rem;">
               <span>Contact Us</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -262,7 +262,7 @@ import Footer from '../../components/footer.astro';
           </div>
           <div style="display: flex; justify-content: center; align-items: center;">
             <div style="width: 100%; max-width: 564px; background: var(--color-gray-100); border-radius: var(--radius-2xl); border: 1px solid var(--color-gray-200); padding: 1.25rem;">
-              <img src="/assets/myABRcorelogo.png" alt="ABR Core Platform" style="width: 100%; height: auto; border-radius: var(--radius-2xl); object-fit: cover;" />
+              <img src={`${import.meta.env.BASE_URL}assets/myABRcorelogo.png`} alt="ABR Core Platform" style="width: 100%; height: auto; border-radius: var(--radius-2xl); object-fit: cover;" />
             </div>
           </div>
         </div>

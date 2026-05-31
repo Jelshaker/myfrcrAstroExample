@@ -232,7 +232,7 @@ import Footer from '../../components/footer.astro';
                 <p class="about-stat-desc">Authored by experienced consultant radiologists.</p>
               </div>
             </div>
-            <a href="/contact" class="read-more-link" style="margin-top: 1.5rem;">
+            <a href={`${import.meta.env.BASE_URL}contact`} class="read-more-link" style="margin-top: 1.5rem;">
               <span>Contact Us</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -241,7 +241,7 @@ import Footer from '../../components/footer.astro';
           </div>
           <div style="display: flex; justify-content: center; align-items: center;">
             <div style="width: 100%; max-width: 564px; background: var(--color-gray-100); border-radius: var(--radius-2xl); border: 1px solid var(--color-gray-200); padding: 1.25rem;">
-              <img src="/assets/myFRANZCRlogo.png" alt="FRANZCR Platform" style="width: 100%; height: auto; border-radius: var(--radius-2xl); object-fit: cover;" />
+              <img src={`${import.meta.env.BASE_URL}assets/myFRANZCRlogo.png`} alt="FRANZCR Platform" style="width: 100%; height: auto; border-radius: var(--radius-2xl); object-fit: cover;" />
             </div>
           </div>
         </div>

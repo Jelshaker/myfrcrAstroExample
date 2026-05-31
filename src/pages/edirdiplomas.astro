@@ -8,21 +8,21 @@ import Footer from '../components/footer.astro';
 <Layout title="EDiR Diplomas - MyFRCR.com" theme="edirdiplomas">
   <Navbar />
   <Subnav links={[
-    { label: 'EBCR', href: '/edirdiplomas#ebcr' },
-    { label: 'EDER', href: '/edirdiplomas#eder' },
-    { label: 'EDGAR', href: '/edirdiplomas#edgar' },
-    { label: 'ESHNR', href: '/edirdiplomas#eshnr' },
-    { label: 'EBNR', href: '/edirdiplomas#ebnr' },
-    { label: 'EDiPNR', href: '/edirdiplomas#edipnr' },
-    { label: 'EDiSR', href: '/edirdiplomas#edisr' },
-    { label: 'EDiINR', href: '/edirdiplomas#ediinr' },
-    { label: 'EDiHNNR', href: '/edirdiplomas#edihnnr' },
-    { label: 'EDiPR', href: '/edirdiplomas#edipr' },
-    { label: 'ESTI', href: '/edirdiplomas#esti' },
-    { label: 'EDiUR', href: '/edirdiplomas#ediur' },
-    { label: 'EDBI', href: '/edirdiplomas#edbi' },
-    { label: 'EBIR', href: '/edirdiplomas#ebir' },
-    { label: 'EDiMSK', href: '/edirdiplomas#edimsk' },
+    { label: 'EBCR', href: `${import.meta.env.BASE_URL}edirdiplomas#ebcr` },
+    { label: 'EDER', href: `${import.meta.env.BASE_URL}edirdiplomas#eder` },
+    { label: 'EDGAR', href: `${import.meta.env.BASE_URL}edirdiplomas#edgar` },
+    { label: 'ESHNR', href: `${import.meta.env.BASE_URL}edirdiplomas#eshnr` },
+    { label: 'EBNR', href: `${import.meta.env.BASE_URL}edirdiplomas#ebnr` },
+    { label: 'EDiPNR', href: `${import.meta.env.BASE_URL}edirdiplomas#edipnr` },
+    { label: 'EDiSR', href: `${import.meta.env.BASE_URL}edirdiplomas#edisr` },
+    { label: 'EDiINR', href: `${import.meta.env.BASE_URL}edirdiplomas#ediinr` },
+    { label: 'EDiHNNR', href: `${import.meta.env.BASE_URL}edirdiplomas#edihnnr` },
+    { label: 'EDiPR', href: `${import.meta.env.BASE_URL}edirdiplomas#edipr` },
+    { label: 'ESTI', href: `${import.meta.env.BASE_URL}edirdiplomas#esti` },
+    { label: 'EDiUR', href: `${import.meta.env.BASE_URL}edirdiplomas#ediur` },
+    { label: 'EDBI', href: `${import.meta.env.BASE_URL}edirdiplomas#edbi` },
+    { label: 'EBIR', href: `${import.meta.env.BASE_URL}edirdiplomas#ebir` },
+    { label: 'EDiMSK', href: `${import.meta.env.BASE_URL}edirdiplomas#edimsk` },
   ]} />
 
   <main class="has-subnav">
@@ -172,7 +172,7 @@ import Footer from '../components/footer.astro';
                 <p class="about-stat-desc">Created by consultant radiologists with subspecialty expertise.</p>
               </div>
             </div>
-            <a href="/contact" class="read-more-link" style="margin-top: 1.5rem;">
+            <a href={`${import.meta.env.BASE_URL}contact`} class="read-more-link" style="margin-top: 1.5rem;">
               <span>Contact Us</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -181,7 +181,7 @@ import Footer from '../components/footer.astro';
           </div>
           <div style="display: flex; justify-content: center; align-items: center;">
             <div style="width: 100%; max-width: 564px; background: var(--color-gray-100); border-radius: var(--radius-2xl); border: 1px solid var(--color-gray-200); padding: 1.25rem;">
-              <img src="/assets/myEDiRlogo lowercase.png" alt="EDiR Diplomas" style="width: 100%; height: auto; border-radius: var(--radius-2xl); object-fit: cover;" />
+              <img src={`${import.meta.env.BASE_URL}assets/myEDiRlogo lowercase.png`} alt="EDiR Diplomas" style="width: 100%; height: auto; border-radius: var(--radius-2xl); object-fit: cover;" />
             </div>
           </div>
         </div>

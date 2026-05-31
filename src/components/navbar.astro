@@ -1,100 +1,100 @@
 <nav class="navbar">
   <div class="container">
-    <a href="/" class="navbar-logo">
-      <img src="/assets/myfrcrlogo.png" alt="MyFRCR Logo" />
+    <a href={`${import.meta.env.BASE_URL}`} class="navbar-logo">
+      <img src={`${import.meta.env.BASE_URL}assets/myfrcrlogo.png`} alt="MyFRCR Logo" />
       <span class="navbar-logo-text">MyFRCR</span>
     </a>
 
     <ul class="nav-links">
       <!-- FRCR Dropdown -->
       <li class="dropdown">
-        <a href="/myfrcr" class="nav-link dropdown-toggle">FRCR</a>
+        <a href={`${import.meta.env.BASE_URL}myfrcr`} class="nav-link dropdown-toggle">FRCR</a>
         <ul class="dropdown-menu">
-          <li><a href="/myfrcr/myfrcrpart1a" class="dropdown-item">Part A Physics</a></li>
-          <li><a href="/myfrcr/myfrcrpart2a" class="dropdown-item">Part 2A</a></li>
-          <li><a href="/myfrcr/myfrcrpart2b" class="dropdown-item">Part 2B</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}myfrcr/myfrcrpart1a`} class="dropdown-item">Part A Physics</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}myfrcr/myfrcrpart2a`} class="dropdown-item">Part 2A</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}myfrcr/myfrcrpart2b`} class="dropdown-item">Part 2B</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a href="/myfrcr/myfrcr_pricing" class="dropdown-item">Pricing</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}myfrcr/myfrcr_pricing`} class="dropdown-item">Pricing</a></li>
         </ul>
       </li>
 
       <!-- ABR Dropdown -->
       <li class="dropdown">
-        <a href="/abr" class="nav-link dropdown-toggle">ABR</a>
+        <a href={`${import.meta.env.BASE_URL}abr`} class="nav-link dropdown-toggle">ABR</a>
         <ul class="dropdown-menu">
-          <li><a href="/abr/abr_core" class="dropdown-item">Qualifying (Core) Exam</a></li>
-          <li><a href="/abr/abr_certifying" class="dropdown-item">Certifying Exam</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}abr/abr_core`} class="dropdown-item">Qualifying (Core) Exam</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}abr/abr_certifying`} class="dropdown-item">Certifying Exam</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a href="/abr/abr_pricing" class="dropdown-item">Pricing</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}abr/abr_pricing`} class="dropdown-item">Pricing</a></li>
         </ul>
       </li>
 
       <!-- EDiR Dropdown -->
       <li class="dropdown">
-        <a href="/edir" class="nav-link dropdown-toggle">EDiR</a>
+        <a href={`${import.meta.env.BASE_URL}edir`} class="nav-link dropdown-toggle">EDiR</a>
         <ul class="dropdown-menu">
-          <li><a href="/edir/edir_mcq" class="dropdown-item">MCQ</a></li>
-          <li><a href="/edir/edir_shortcases" class="dropdown-item">Short Cases</a></li>
-          <li><a href="/edir/edir_core" class="dropdown-item">CORE</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edir/edir_mcq`} class="dropdown-item">MCQ</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edir/edir_shortcases`} class="dropdown-item">Short Cases</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edir/edir_core`} class="dropdown-item">CORE</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a href="/edir/edir_pricing" class="dropdown-item">Pricing</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edir/edir_pricing`} class="dropdown-item">Pricing</a></li>
         </ul>
       </li>
 
       <!-- EDiR Diplomas Dropdown -->
       <li class="dropdown">
-        <a href="/edirdiplomas" class="nav-link dropdown-toggle">EDiR Diplomas</a>
+        <a href={`${import.meta.env.BASE_URL}edirdiplomas`} class="nav-link dropdown-toggle">EDiR Diplomas</a>
         <ul class="dropdown-menu dropdown-menu-wide">
-          <li><a href="/edirdiplomas#ebcr" class="dropdown-item">EBCR</a></li>
-          <li><a href="/edirdiplomas#eder" class="dropdown-item">EDER</a></li>
-          <li><a href="/edirdiplomas#edgar" class="dropdown-item">EDGAR</a></li>
-          <li><a href="/edirdiplomas#eshnr" class="dropdown-item">ESHNR</a></li>
-          <li><a href="/edirdiplomas#ebnr" class="dropdown-item">EBNR</a></li>
-          <li><a href="/edirdiplomas#edipnr" class="dropdown-item">EDiPNR</a></li>
-          <li><a href="/edirdiplomas#edisr" class="dropdown-item">EDiSR</a></li>
-          <li><a href="/edirdiplomas#ediinr" class="dropdown-item">EDiINR</a></li>
-          <li><a href="/edirdiplomas#edihnnr" class="dropdown-item">EDiHNNR</a></li>
-          <li><a href="/edirdiplomas#edipr" class="dropdown-item">EDiPR</a></li>
-          <li><a href="/edirdiplomas#esti" class="dropdown-item">ESTI</a></li>
-          <li><a href="/edirdiplomas#ediur" class="dropdown-item">EDiUR</a></li>
-          <li><a href="/edirdiplomas#edbi" class="dropdown-item">EDBI</a></li>
-          <li><a href="/edirdiplomas#ebir" class="dropdown-item">EBIR</a></li>
-          <li><a href="/edirdiplomas#edimsk" class="dropdown-item">EDiMSK</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#ebcr`} class="dropdown-item">EBCR</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#eder`} class="dropdown-item">EDER</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#edgar`} class="dropdown-item">EDGAR</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#eshnr`} class="dropdown-item">ESHNR</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#ebnr`} class="dropdown-item">EBNR</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#edipnr`} class="dropdown-item">EDiPNR</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#edisr`} class="dropdown-item">EDiSR</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#ediinr`} class="dropdown-item">EDiINR</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#edihnnr`} class="dropdown-item">EDiHNNR</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#edipr`} class="dropdown-item">EDiPR</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#esti`} class="dropdown-item">ESTI</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#ediur`} class="dropdown-item">EDiUR</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#edbi`} class="dropdown-item">EDBI</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#ebir`} class="dropdown-item">EBIR</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edirdiplomas#edimsk`} class="dropdown-item">EDiMSK</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a href="/edir_diplomas/edir_diploma_pricing" class="dropdown-item">Pricing</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}edir_diplomas/edir_diploma_pricing`} class="dropdown-item">Pricing</a></li>
         </ul>
       </li>
 
       <!-- FRANZCR Dropdown -->
       <li class="dropdown">
-        <a href="/franzcr" class="nav-link dropdown-toggle">FRANZCR</a>
+        <a href={`${import.meta.env.BASE_URL}franzcr`} class="nav-link dropdown-toggle">FRANZCR</a>
         <ul class="dropdown-menu">
-          <li><a href="/franzcr/pathology" class="dropdown-item">Pathology MCQ & SAQ</a></li>
-          <li><a href="/franzcr/phase2-mcq" class="dropdown-item">Phase 2 MCQ</a></li>
-          <li><a href="/franzcr/case-reporting" class="dropdown-item">Phase 2 Case Reporting</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}franzcr/pathology`} class="dropdown-item">Pathology MCQ & SAQ</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}franzcr/phase2-mcq`} class="dropdown-item">Phase 2 MCQ</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}franzcr/case-reporting`} class="dropdown-item">Phase 2 Case Reporting</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a href="/franzcr/franzcr_pricing" class="dropdown-item">Pricing</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}franzcr/franzcr_pricing`} class="dropdown-item">Pricing</a></li>
         </ul>
       </li>
 
       <!-- FRCPC Dropdown -->
       <li class="dropdown">
-        <a href="/rcpsc" class="nav-link dropdown-toggle">FRCPC</a>
+        <a href={`${import.meta.env.BASE_URL}rcpsc`} class="nav-link dropdown-toggle">FRCPC</a>
         <ul class="dropdown-menu">
-          <li><a href="/rcpsc/rcpsc_mcq" class="dropdown-item">Paper 1: MCQ</a></li>
-          <li><a href="/rcpsc/rcpsc_sba" class="dropdown-item">Paper 2: SAQ</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}rcpsc/rcpsc_mcq`} class="dropdown-item">Paper 1: MCQ</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}rcpsc/rcpsc_sba`} class="dropdown-item">Paper 2: SAQ</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a href="/rcpsc/rcpsc_pricing" class="dropdown-item">Pricing</a></li>
+          <li><a href={`${import.meta.env.BASE_URL}rcpsc/rcpsc_pricing`} class="dropdown-item">Pricing</a></li>
         </ul>
       </li>
 
       <!-- Contact -->
-      <li><a href="/contact" class="nav-link">Contact</a></li>
+      <li><a href={`${import.meta.env.BASE_URL}contact`} class="nav-link">Contact</a></li>
     </ul>
 
     <div class="nav-auth">
-      <a href="/signin" class="btn btn-outline btn-sm">Login</a>
-      <a href="/signin" class="btn btn-primary btn-sm">Sign Up</a>
+      <a href={`${import.meta.env.BASE_URL}signin`} class="btn btn-outline btn-sm">Login</a>
+      <a href={`${import.meta.env.BASE_URL}signin`} class="btn btn-primary btn-sm">Sign Up</a>
     </div>
   </div>
 </nav>
