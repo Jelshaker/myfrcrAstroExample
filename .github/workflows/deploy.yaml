@@ -18,6 +18,8 @@ jobs:
 
       - name: Install, build, and upload your site
         uses: withastro/action@v3
+        with:
+          node-version: 22
         # If you use pnpm or yarn, the action automatically detects it
 
   deploy:
