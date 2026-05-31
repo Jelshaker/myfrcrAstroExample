@@ -1,111 +1,120 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import Navbar from '../components/navbar.astro';
+import Footer from '../components/footer.astro';
 ---
 
-<div class="signup-hero">
-  <h1>Welcome to myFRCR</h1>
-  <p>Create an account to access our comprehensive exam preparation platform.</p>
-</div>
+<Layout title="Sign In - MyFRCR.com">
+  <Navbar />
 
-<div class="signup-container">
-  <form action="/api/auth/signin" method="post">
-    <div class="input-group">
-      <label for="email">Email Address</label>
-      <input 
-        type="email" 
-        id="email" 
-        name="email" 
-        placeholder="your.email@example.com" 
-        required
-      />
+  <div style="min-height: 100vh; padding-top: 6rem; background: linear-gradient(to bottom, var(--color-slate-50), var(--color-white));">
+    <div class="signup-hero">
+      <h1>Welcome to myFRCR</h1>
+      <p>Create an account to access our comprehensive exam preparation platform.</p>
     </div>
 
-    <div class="input-group">
-      <label for="password">Password</label>
-      <input 
-        type="password" 
-        id="password" 
-        name="password" 
-        placeholder="Enter your password" 
-        required
-      />
+    <div class="signup-container">
+      <form action="/api/auth/signin" method="post">
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="your.email@example.com" 
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Enter your password" 
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+          Sign In
+        </button>
+      </form>
+
+      <p class="signup-link">
+        Already have an account? 
+        <a href="/signin/forgot-password">Forgot Password?</a>
+      </p>
     </div>
+  </div>
 
-    <button type="submit" class="btn btn-primary btn-lg">
-      Sign In
-    </button>
-  </form>
+  <Footer />
 
-  <p class="signup-link">
-    Already have an account? 
-    <a href="/signin/forgot-password">Forgot Password?</a>
-  </p>
-</div>
+  <style>
+    .signup-hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
 
-<style>
-  .signup-hero {
-    text-align: center;
-    padding: 3rem 1rem;
-  }
+    .signup-hero h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-gray-900);
+    }
 
-  .signup-hero h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-gray-900);
-  }
+    .signup-hero p {
+      color: var(--color-gray-600);
+      font-size: 1rem;
+    }
 
-  .signup-hero p {
-    color: var(--color-gray-600);
-    font-size: 1rem;
-  }
+    .signup-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
 
-  .signup-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: var(--color-white);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
-  }
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
 
-  .input-group {
-    margin-bottom: 1.5rem;
-  }
+    .input-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-gray-900);
+      margin-bottom: 0.5rem;
+    }
 
-  .input-group label {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--color-gray-900);
-    margin-bottom: 0.5rem;
-  }
+    .input-group input {
+      width: 100%;
+      padding: 0.875rem;
+      border: 1px solid var(--color-gray-300);
+      border-radius: var(--radius-lg);
+      font-size: 1rem;
+      background: var(--color-white);
+      transition: all 0.2s;
+    }
 
-  .input-group input {
-    width: 100%;
-    padding: 0.875rem;
-    border: 1px solid var(--color-gray-300);
-    border-radius: var(--radius-lg);
-    font-size: 1rem;
-    background: var(--color-white);
-    transition: all 0.2s;
-  }
+    .input-group input:focus {
+      outline: none;
+      border-color: var(--color-blue-600);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
 
-  .input-group input:focus {
-    outline: none;
-    border-color: var(--color-blue-600);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-  }
+    .signup-link {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: var(--color-gray-600);
+    }
 
-  .signup-link {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.875rem;
-    color: var(--color-gray-600);
-  }
-
-  .signup-link a {
-    color: var(--color-blue-600);
-    font-weight: 500;
-  }
-</style>
+    .signup-link a {
+      color: var(--color-blue-600);
+      font-weight: 500;
+    }
+  </style>
+</Layout>
