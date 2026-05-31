@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/navbar.astro';
 import Subnav from '../../components/subnav.astro';
+import Card from '../../components/card.astro';
 import Footer from '../../components/footer.astro';
 ---
 
@@ -68,42 +69,69 @@ import Footer from '../../components/footer.astro';
       <div class="container">
         <h2 class="section-title text-center">Pricing</h2>
         <p class="section-subtitle">Everything you need to pass your EDiR</p>
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <div class="pricing-subtitle">Premium Access</div>
-            <div class="pricing-price">€100</div>
-            <p style="color: var(--color-gray-600); margin-top: 0.5rem;">31 days of full access</p>
-          </div>
-          <ul class="pricing-features">
-            <li class="pricing-feature">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
-              <div><span class="pricing-feature-title">2,000+ Real Clinical Cases</span></div>
-            </li>
-            <li class="pricing-feature">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
-              <div><span class="pricing-feature-title">600+ Full Core Questions</span></div>
-            </li>
-            <li class="pricing-feature">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
-              <div><span class="pricing-feature-title">Unlimited Practice</span></div>
-            </li>
-            <li class="pricing-feature">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
-              <div><span class="pricing-feature-title">Examiner-style marking and explanations</span></div>
-            </li>
-            <li class="pricing-feature">
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
-              <div><span class="pricing-feature-title">Full diagnostic workstation quality DICOM Viewer</span></div>
-            </li>
-          </ul>
-          <div class="pricing-separator"></div>
-          <p style="text-align: center; font-weight: 600; color: var(--color-gray-700);">Secure Payment</p>
-          <button class="pricing-cta">Get Started</button>
-          <p class="pricing-footer-text">Cancel anytime &bull; No automatic renewal</p>
+
+        <div class="pricing-grid">
+          <Card
+            plan={{
+              title: 'EDiR MCQ',
+              subtitle: '2 months of full access',
+              price: '60',
+              currency: '\u20ac',
+              period: 'total',
+              features: [
+                { title: '2,000+ Real Clinical Cases' },
+                { title: 'Comprehensive MCQ Bank' },
+                { title: 'Detailed Explanations' },
+                { title: 'Examiner-style marking' },
+              ],
+              ctaText: 'Get MCQ Access',
+              ctaHref: '#',
+              footerText: 'Cancel anytime \u2022 No automatic renewal',
+            }}
+          />
+
+          <Card
+            plan={{
+              title: 'EDiR Short Cases',
+              subtitle: '2 months of full access',
+              price: '60',
+              currency: '\u20ac',
+              period: 'total',
+              features: [
+                { title: 'Comprehensive Short Case Library' },
+                { title: 'Structured Reporting Practice' },
+                { title: 'Unlimited Practice' },
+                { title: 'Examiner-style marking and feedback' },
+                { title: 'Full diagnostic workstation quality DICOM Viewer' },
+              ],
+              ctaText: 'Get Short Cases Access',
+              ctaHref: '#',
+              footerText: 'Cancel anytime \u2022 No automatic renewal',
+            }}
+          />
+
+          <Card
+            plan={{
+              title: 'EDiR CORE Cases',
+              subtitle: '2 months of full access',
+              price: '100',
+              currency: '\u20ac',
+              period: 'total',
+              featured: true,
+              badge: 'Most Popular',
+              features: [
+                { title: '600+ Full Core Questions' },
+                { title: '2,000+ Real Clinical Cases' },
+                { title: 'Comprehensive CORE Case Coverage' },
+                { title: 'Examiner-style marking and explanations' },
+                { title: 'Full diagnostic workstation quality DICOM Viewer' },
+              ],
+              ctaText: 'Get CORE Access',
+              ctaHref: '#',
+              footerText: 'Cancel anytime \u2022 No automatic renewal',
+            }}
+          />
         </div>
-        <p class="pricing-disclaimer">
-          No automatic renewal. This is a one-time payment &mdash; you will not be charged again unless you choose to resubscribe.
-        </p>
       </div>
     </section>
 
@@ -152,8 +180,27 @@ import Footer from '../../components/footer.astro';
         </div>
       </div>
     </section>
-
   </main>
 
   <Footer />
 </Layout>
+
+<style>
+  .pricing-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
