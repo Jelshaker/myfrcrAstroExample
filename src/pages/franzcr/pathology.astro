@@ -1,13 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/navbar.astro';
+import Subnav from '../../components/subnav.astro';
 import Footer from '../../components/footer.astro';
 ---
 
 <Layout title="FRANZCR Pathology - MyFRCR.com" theme="franzcr">
   <Navbar />
+  <Subnav links={[
+    { label: 'Pathology MCQ & SAQ', href: '/franzcr/pathology' },
+    { label: 'Phase 2 MCQ', href: '/franzcr/phase2-mcq' },
+    { label: 'Case Reporting', href: '/franzcr/case-reporting' },
+  ]} />
 
-  <main>
+  <main class="has-subnav">
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-bg-pattern">

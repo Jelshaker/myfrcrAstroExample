@@ -1,13 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar.astro';
+import Subnav from '../components/subnav.astro';
 import Footer from '../components/footer.astro';
 ---
 
 <Layout title="ABR Core Exam - MyFRCR.com" theme="abr">
   <Navbar />
+  <Subnav links={[
+    { label: 'Qualifying (Core) Exam', href: '/abr#core' },
+    { label: 'Certifying Exam', href: '/abr#certifying' },
+  ]} />
 
-  <main>
+  <main class="has-subnav">
     <!-- Hero Section -->
     <section class="hero" id="core">
       <div class="hero-bg-pattern">

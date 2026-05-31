@@ -1,13 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar.astro';
+import Subnav from '../components/subnav.astro';
 import Footer from '../components/footer.astro';
 ---
 
 <Layout title="RCPSC - MyFRCR.com" theme="rcpsc">
   <Navbar />
+  <Subnav links={[
+    { label: 'Paper 1: MCQ', href: '/rcpsc#paper1' },
+    { label: 'Paper 2: SAQ', href: '/rcpsc#paper2' },
+  ]} />
 
-  <main>
+  <main class="has-subnav">
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-bg-pattern">

@@ -1,13 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/navbar.astro';
+import Subnav from '../components/subnav.astro';
 import Footer from '../components/footer.astro';
 ---
 
 <Layout title="EDiR Diplomas - MyFRCR.com" theme="edirdiplomas">
   <Navbar />
+  <Subnav links={[
+    { label: 'EBCR', href: '/edirdiplomas#ebcr' },
+    { label: 'EDER', href: '/edirdiplomas#eder' },
+    { label: 'EDGAR', href: '/edirdiplomas#edgar' },
+    { label: 'ESHNR', href: '/edirdiplomas#eshnr' },
+    { label: 'EBNR', href: '/edirdiplomas#ebnr' },
+    { label: 'EDiPNR', href: '/edirdiplomas#edipnr' },
+    { label: 'EDiSR', href: '/edirdiplomas#edisr' },
+    { label: 'EDiINR', href: '/edirdiplomas#ediinr' },
+    { label: 'EDiHNNR', href: '/edirdiplomas#edihnnr' },
+    { label: 'EDiPR', href: '/edirdiplomas#edipr' },
+    { label: 'ESTI', href: '/edirdiplomas#esti' },
+    { label: 'EDiUR', href: '/edirdiplomas#ediur' },
+    { label: 'EDBI', href: '/edirdiplomas#edbi' },
+    { label: 'EBIR', href: '/edirdiplomas#ebir' },
+    { label: 'EDiMSK', href: '/edirdiplomas#edimsk' },
+  ]} />
 
-  <main>
+  <main class="has-subnav">
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-bg-pattern">
@@ -34,7 +52,7 @@ import Footer from '../components/footer.astro';
     </section>
 
     <!-- Diplomas Section -->
-    <section class="section section-white">
+    <section class="section section-white" id="diploma-list">
       <div class="container">
         <h2 class="section-title text-center">Available Diploma Platforms</h2>
         <p class="section-subtitle">Specialised platforms for each subspecialty area of the EDiR diploma.</p>
@@ -98,7 +116,7 @@ import Footer from '../components/footer.astro';
     </section>
 
     <!-- Features Section -->
-    <section class="section section-gray">
+    <section class="section section-gray" id="features">
       <div class="container">
         <h2 class="section-title text-center">Why Choose EDiR Diploma Platforms?</h2>
         <div class="features-grid" style="margin-top: 2rem;">
