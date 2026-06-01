@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/navbar.astro';
+import Subnav from '../../components/subnav.astro';
+import PhysicsCard from '../../components/myfrcrphysics.astro';
+import QuestionCard from '../../components/questioncard.astro';
+import Footer from '../../components/footer.astro';
+---
+
+<Layout title="FRCR Questions – myFRCR - FRCR Exam - MyFRCR.com" theme="myfrcr">
+  <Navbar />
+  <Subnav links={[
+    { label: 'Part A Physics', href: '/myfrcr/myfrcrpart1a' },
+    { label: 'Part 2A', href: '/myfrcr/myfrcrpart2a' },
+    { label: 'Part 2B Shorts & Long Cases', href: '/myfrcr/myfrcrpart2b' },
+  ]} />
+
+  <main class="has-subnav">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg-pattern">
+        <div class="hero-gradient-1"></div>
+        <div class="hero-gradient-2"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-inner">
+          <h1 class="hero-title">
+            FRCR Questions
+            <span class="hero-title-gradient">Physics & Specimen Resources</span>
+          </h1>
+          <p class="hero-description">
+            Access official RCR specimen questions and comprehensive physics resources to prepare for your FRCR Part 1 CR1 examination.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-card"><p class="stat-card-text">RCR Official Specimen</p></div>
+            <div class="stat-card"><p class="stat-card-text">Physics Module Focus</p></div>
+            <div class="stat-card"><p class="stat-card-text">Part 1 CR1</p></div>
+            <div class="stat-card"><p class="stat-card-text">Detailed Explanations</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">RCR</div>
+            <div class="stat-label">Official Questions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Physics</div>
+            <div class="stat-label">Module Focus</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Part 1</div>
+            <div class="stat-label">CR1 Exam</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free Access</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Physics Card Section -->
+    <section class="section section-white" id="physics-resources">
+      <div class="container">
+        <h2 class="section-title text-center">Physics Specimen Questions</h2>
+        <p class="section-subtitle">Official RCR FRCR Part 1 CR1 Physics Module specimen questions</p>
+
+        <div class="cards-grid">
+          <PhysicsCard
+            resource={{
+              title: 'FRCR Part 1 Physics',
+              description: 'Official RCR specimen questions for the FRCR Part 1 CR1 Physics module. These questions cover the core physics principles relevant to clinical radiology, including radiation physics, imaging equipment, radiation safety, and quality assurance.',
+              href: 'https://www.rcr.ac.uk/exams-training/rcr-exams/clinical-radiology-exams/frcr-part-1-radiology-cr1/frcr-part-1-radiology-cr1-specimen-questions-physics-module/',
+              badge: 'Official RCR Resource',
+            }}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Questions Section -->
+    <section class="section section-gray" id="sample-questions">
+      <div class="container">
+        <h2 class="section-title text-center">Example Questions</h2>
+        <p class="section-subtitle">Live practice questions in the RCR specimen format with answers and explanations</p>
+
+        <div class="questions-grid">
+          <QuestionCard
+            question={{
+              number: 1,
+              stem: 'Concerning the Compton effect:',
+              statements: [
+                { label: 'a', text: 'There is interaction between a photon and a free electron.' },
+                { label: 'b', text: 'The larger the angle through which the photon is scattered, the more energy it loses.' },
+                { label: 'c', text: 'The wavelength change produced depends upon the scattering material.' },
+                { label: 'd', text: 'High energy radiation is scattered more than lower energy radiation.' },
+                { label: 'e', text: 'The amount of scattering that occurs depends on the electron density of the scattering material.' },
+              ],
+              answers: [
+                { label: 'a', correct: true, explanation: 'Compton scattering fundamentally involves an incident photon colliding with a weakly bound outer-shell (effectively "free") electron.' },
+                { label: 'b', correct: true, explanation: 'Energy loss increases with the scattering angle, reaching a maximum at 180 degrees (backscatter).' },
+                { label: 'c', correct: false, explanation: 'The change in wavelength depends solely on the scattering angle (Δλ = λc(1 − cosθ)), not on the target material properties.' },
+                { label: 'd', correct: false, explanation: 'The probability of Compton scattering decreases as photon energy increases (though it remains dominant relative to the photoelectric effect at higher energies).' },
+                { label: 'e', correct: true, explanation: 'Because Compton scattering interacts with electrons, its probability is directly proportional to the material\'s electron density.' },
+              ],
+            }}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <h6 class="about-label">About FRCR Physics Questions</h6>
+            <h2 class="about-title">Prepare with Official Specimen Questions</h2>
+            <p class="about-desc" style="margin-top: 1rem;">
+              The FRCR Part 1 CR1 Physics module specimen questions are published by the Royal College of Radiologists (RCR) to help candidates prepare for the examination. These questions reflect the style, depth, and breadth of the actual exam, covering essential topics in radiation physics, imaging technology, and radiation protection.
+            </p>
+            <div class="about-stats-grid" style="margin-top: 1.5rem;">
+              <div class="about-stat-card">
+                <h4 class="about-stat-number">RCR Published</h4>
+                <p class="about-stat-desc">Official specimen questions from the Royal College of Radiologists.</p>
+              </div>
+              <div class="about-stat-card">
+                <h4 class="about-stat-number">Physics Module</h4>
+                <p class="about-stat-desc">Focused specifically on the Part 1 CR1 physics curriculum.</p>
+              </div>
+            </div>
+            <div class="about-stats-grid" style="margin-top: 1rem;">
+              <div class="about-stat-card">
+                <h4 class="about-stat-number">Exam-Style Format</h4>
+                <p class="about-stat-desc">Questions mirror the actual FRCR Part 1 CR1 examination format.</p>
+              </div>
+              <div class="about-stat-card">
+                <h4 class="about-stat-number">Free Resource</h4>
+                <p class="about-stat-desc">Freely available on the RCR website for all candidates.</p>
+              </div>
+            </div>
+            <a href={`${import.meta.env.BASE_URL}contact`} class="read-more-link" style="margin-top: 1.5rem;">
+              <span>Contact Us</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="width: 100%; max-width: 564px; background: var(--color-gray-100); border-radius: var(--radius-2xl); border: 1px solid var(--color-gray-200); padding: 1.25rem;">
+              <img src={`${import.meta.env.BASE_URL}assets/myfrcrlogo white background.png`} alt="myFRCR Platform" style="width: 100%; height: auto; border-radius: var(--radius-2xl); object-fit: cover;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .cards-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 2rem;
+  }
+
+  .questions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .section-gray {
+    background: var(--color-gray-50);
+  }
+
+  @media (min-width: 768px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
