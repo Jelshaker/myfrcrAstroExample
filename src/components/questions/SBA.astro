@@ -2,13 +2,12 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/navbar.astro';
 import Subnav from '../../components/subnav.astro';
-import PhysicsCard from '../../components/questions/myfrcrphysics.astro';
+import PhysicsCard from '../../components/questions/myfrcrphysics.astro'; // Consider renaming this component wrapper if reused for 2A
 import QuestionCard from '../../components/questioncard.astro';
-import SBA from '../../components/questions/SBA.astro';
 import Footer from '../../components/footer.astro';
 ---
 
-<Layout title="FRCR Questions – myFRCR - FRCR Exam - MyFRCR.com" theme="myfrcr">
+<Layout title="FRCR Part 2A Questions – myFRCR - FRCR Exam - MyFRCR.com" theme="myfrcr">
   <Navbar />
   <Subnav links={[
     { label: 'Part A Physics', href: '/myfrcr/myfrcrpart1a' },
@@ -26,16 +25,16 @@ import Footer from '../../components/footer.astro';
       <div class="hero-content">
         <div class="hero-inner">
           <h1 class="hero-title">
-            FRCR Questions
-            <span class="hero-title-gradient">Physics & Specimen Resources</span>
+            FRCR Part 2A Questions
+            <span class="hero-title-gradient">SBA & Clinical Resources</span>
           </h1>
           <p class="hero-description">
-            Access official RCR specimen questions and comprehensive physics resources to prepare for your FRCR Part 1 CR1 examination.
+            Access official RCR specimen questions and comprehensive SBA resources to prepare for your FRCR Part 2A (CR2A) examination.
           </p>
           <div class="hero-stats">
             <div class="stat-card"><p class="stat-card-text">RCR Official Specimen</p></div>
-            <div class="stat-card"><p class="stat-card-text">Physics Module Focus</p></div>
-            <div class="stat-card"><p class="stat-card-text">Part 1 CR1</p></div>
+            <div class="stat-card"><p class="stat-card-text">Core Clinical Modules</p></div>
+            <div class="stat-card"><p class="stat-card-text">Part 2A CR2A</p></div>
             <div class="stat-card"><p class="stat-card-text">Detailed Explanations</p></div>
           </div>
         </div>
@@ -51,12 +50,12 @@ import Footer from '../../components/footer.astro';
             <div class="stat-label">Official Questions</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number">Physics</div>
-            <div class="stat-label">Module Focus</div>
+            <div class="stat-number">SBA</div>
+            <div class="stat-label">Exam Format</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number">Part 1</div>
-            <div class="stat-label">CR1 Exam</div>
+            <div class="stat-number">Part 2A</div>
+            <div class="stat-label">CR2A Exam</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">100%</div>
@@ -66,18 +65,18 @@ import Footer from '../../components/footer.astro';
       </div>
     </section>
 
-    <!-- Physics Card Section -->
-    <section class="section section-white" id="physics-resources">
+    <!-- Resources Card Section -->
+    <section class="section section-white" id="clinical-resources">
       <div class="container">
-        <h2 class="section-title text-center">Physics Specimen Questions</h2>
-        <p class="section-subtitle">Official RCR FRCR Part 1 CR1 Physics Module specimen questions</p>
+        <h2 class="section-title text-center">Part 2A Specimen Questions</h2>
+        <p class="section-subtitle">Official RCR FRCR Part 2A CR2A Single Best Answer (SBA) specimen questions</p>
 
         <div class="cards-grid">
           <PhysicsCard
             resource={{
-              title: 'FRCR Part 1 Physics',
-              description: 'Official RCR specimen questions for the FRCR Part 1 CR1 Physics module. These questions cover the core physics principles relevant to clinical radiology, including radiation physics, imaging equipment, radiation safety, and quality assurance.',
-              href: 'https://www.rcr.ac.uk/exams-training/rcr-exams/clinical-radiology-exams/frcr-part-1-radiology-cr1/frcr-part-1-radiology-cr1-specimen-questions-physics-module/',
+              title: 'FRCR Part 2A Clinical SBA',
+              description: 'Official RCR specimen questions for the FRCR Part 2A CR2A examination. These questions cover the core clinical systems including Cardiothoracic/Vascular, Musculoskeletal, Gastrointestinal, Genitourinary, Neuroradiology, and Paediatrics.',
+              href: 'https://www.rcr.ac.uk/exams-training/rcr-exams/clinical-radiology-exams/frcr-part-2a-radiology-cr2a/',
               badge: 'Official RCR Resource',
             }}
           />
@@ -88,39 +87,8 @@ import Footer from '../../components/footer.astro';
     <!-- Sample Questions Section -->
     <section class="section section-gray" id="sample-questions">
       <div class="container">
-        <h2 class="section-title text-center">Example Questions</h2>
-        <p class="section-subtitle">Live practice questions in the RCR specimen format with answers and explanations</p>
-
-        <div class="questions-grid">
-          <QuestionCard
-            question={{
-              number: 1,
-              stem: 'Concerning the Compton effect:',
-              statements: [
-                { label: 'a', text: 'There is interaction between a photon and a free electron.' },
-                { label: 'b', text: 'The larger the angle through which the photon is scattered, the more energy it loses.' },
-                { label: 'c', text: 'The wavelength change produced depends upon the scattering material.' },
-                { label: 'd', text: 'High energy radiation is scattered more than lower energy radiation.' },
-                { label: 'e', text: 'The amount of scattering that occurs depends on the electron density of the scattering material.' },
-              ],
-              answers: [
-                { label: 'a', correct: true, explanation: 'Compton scattering fundamentally involves an incident photon colliding with a weakly bound outer-shell (effectively "free") electron.' },
-                { label: 'b', correct: true, explanation: 'Energy loss increases with the scattering angle, reaching a maximum at 180 degrees (backscatter).' },
-                { label: 'c', correct: false, explanation: 'The change in wavelength depends solely on the scattering angle (Δλ = λc(1 − cosθ)), not on the target material properties.' },
-                { label: 'd', correct: false, explanation: 'The probability of Compton scattering decreases as photon energy increases (though it remains dominant relative to the photoelectric effect at higher energies).' },
-                { label: 'e', correct: true, explanation: 'Because Compton scattering interacts with electrons, its probability is directly proportional to the material\'s electron density.' },
-              ],
-            }}
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- SBA Sample Questions Section (imported from SBA.astro) -->
-    <section class="section section-white" id="sba-questions">
-      <div class="container">
-        <h2 class="section-title text-center">SBA Example Question</h2>
-        <p class="section-subtitle">Single Best Answer practice question in the RCR Part 2A SBA format with answer and explanation</p>
+        <h2 class="section-title text-center">Example SBA Question</h2>
+        <p class="section-subtitle">Live practice question in the RCR Part 2A Single Best Answer format with answer and explanation</p>
 
         <div class="questions-grid">
           <QuestionCard
@@ -152,29 +120,29 @@ import Footer from '../../components/footer.astro';
       <div class="container">
         <div class="about-grid">
           <div>
-            <h6 class="about-label">About FRCR Questions</h6>
-            <h2 class="about-title">Physics & SBA Question Resources</h2>
+            <h6 class="about-label">About FRCR Part 2A Questions</h6>
+            <h2 class="about-title">Master the Exam with Single Best Answers</h2>
             <p class="about-desc" style="margin-top: 1rem;">
-              The FRCR Part 1 CR1 Physics and Part 2A specimen questions are published by the Royal College of Radiologists (RCR) to help candidates prepare for the examination. These resources cover essential topics in radiation physics, imaging technology, radiation protection, and clinical radiology across major organ systems.
+              The FRCR Part 2A (CR2A) specimen questions are provided by the Royal College of Radiologists (RCR) to aid candidates in mastering the Single Best Answer (SBA) format. The exam assesses a candidate\'s knowledge of core clinical radiology and pathophysiology across all major organ systems.
             </p>
             <div class="about-stats-grid" style="margin-top: 1.5rem;">
               <div class="about-stat-card">
-                <h4 class="about-stat-number">RCR Published</h4>
-                <p class="about-stat-desc">Official specimen questions from the Royal College of Radiologists.</p>
+                <h4 class="about-stat-number">RCR Standard</h4>
+                <p class="about-stat-desc">Official specimen curriculum alignment from the Royal College of Radiologists.</p>
               </div>
               <div class="about-stat-card">
-                <h4 class="about-stat-number">Multi-Module Coverage</h4>
-                <p class="about-stat-desc">Covers Physics (Part 1) and Clinical Systems (Part 2A).</p>
+                <h4 class="about-stat-number">6 Core Modules</h4>
+                <p class="about-stat-desc">Covers Cardiothoracic, MSK, GI, GU, Neuro, and Paediatric radiology.</p>
               </div>
             </div>
             <div class="about-stats-grid" style="margin-top: 1rem;">
               <div class="about-stat-card">
-                <h4 class="about-stat-number">Exam-Style Format</h4>
-                <p class="about-stat-desc">Questions mirror the actual FRCR Part 1 CR1 and Part 2A examination formats.</p>
+                <h4 class="about-stat-number">SBA Structure</h4>
+                <p class="about-stat-desc">Questions reflect clinical scenarios requiring candidates to select the single best option.</p>
               </div>
               <div class="about-stat-card">
                 <h4 class="about-stat-number">Free Resource</h4>
-                <p class="about-stat-desc">Freely available on the RCR website for all candidates.</p>
+                <p class="about-stat-desc">Freely available guidelines and syllabus materials on the RCR website.</p>
               </div>
             </div>
             <a href={`${import.meta.env.BASE_URL}contact`} class="read-more-link" style="margin-top: 1.5rem;">
