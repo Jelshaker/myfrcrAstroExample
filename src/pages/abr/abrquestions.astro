@@ -1,0 +1,238 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/navbar.astro';
+import Subnav from '../../components/subnav.astro';
+import Footer from '../../components/footer.astro';
+import PhysicsCard from '../../components/questions/myfrcrphysics.astro';
+import MRQ from '../../components/questions/MRQ.astro';
+import SBA from '../../components/questions/SBA.astro';
+import Shortcases, { type shortcasesquestion } from '../../components/questions/shortcases.astro';
+import FranzcrShortCase from '../../components/questions/franzcrshortcase.astro';
+import FranzcrMediumCase from '../../components/questions/franzcrmediumcase.astro';
+import Corecases, { type corecasesquestion } from '../../components/questions/corecases.astro';
+---
+
+<Layout title="ABR Questions – ABR Exam - MyFRCR.com" theme="abr">
+  <Navbar />
+  <Subnav links={[
+    { label: 'Qualifying Core Exam', href: '/abr/abr_core' },
+    { label: 'Certifying Exam', href: '/abr/abr_certifying' },
+  ]} />
+
+  <main class="has-subnav">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg-pattern">
+        <div class="hero-gradient-1"></div>
+        <div class="hero-gradient-2"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-inner">
+          <h1 class="hero-title">
+            Questions
+            <span class="hero-title-gradient">Sample Questions & Practice Resources</span>
+          </h1>
+          <p class="hero-description">
+            Sample ABR exam questions covering physics, multiple response, single best answer, short cases, and medium cases to prepare for the Qualifying Core Exam and Certifying Exam.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-card"><p class="stat-card-text">Physics Practice Questions</p></div>
+            <div class="stat-card"><p class="stat-card-text">MRQ & SBA Questions</p></div>
+            <div class="stat-card"><p class="stat-card-text">Case Reporting Practice</p></div>
+            <div class="stat-card"><p class="stat-card-text">100% Free Access</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">Physics</div>
+            <div class="stat-label">Practice Questions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">MRQ & SBA</div>
+            <div class="stat-label">Question Formats</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Short & Medium</div>
+            <div class="stat-label">Case Reporting</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free Access</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== QUALIFYING CORE EXAM ==================== -->
+    <section class="section section-abr-core" id="qualifying-core-exam">
+      <div class="container">
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-abr-core">Qualifying Core Exam</span>
+          <h2 class="section-title text-center">Qualifying Core Exam</h2>
+          <p class="section-subtitle">
+            Physics, MRQ, SBA, and short case practice questions for the ABR Qualifying (Core) Exam
+          </p>
+        </div>
+
+        <PhysicsCard
+          resource={{
+            title: 'FRCR Physics Specimen Questions',
+            description: 'Official RCR specimen questions for the FRCR Part 1 CR1 Physics module. Practice with Single Best Answer format questions covering key physics principles.',
+            href: '#',
+            badge: 'Physics',
+          }}
+        />
+
+        <MRQ
+          sectionId="mrq-sample"
+          title="Sample MRQ Question"
+          subtitle="Live practice question in the Multiple Response format with answer and explanation"
+        />
+
+        <SBA
+          sectionId="sba-sample"
+          title="Sample SBA Question"
+          subtitle="Live practice question in the Single Best Answer format with answer and explanation"
+        />
+
+        <h3 class="section-title" style="margin-top: 2rem;">Sample Short Case Question</h3>
+
+        <Shortcases questions={[
+  {
+    number: 1.1,
+    stem: 'Concerning/In [Insert Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement 1]' },
+      { label: 'b', text: '[Statement 2]' },
+      { label: 'c', text: '[Statement 3]' },
+      { label: 'd', text: '[Statement 4]' },
+      { label: 'e', text: '[Statement 5]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Incorrect', correct: false },
+      { label: 'c', text: 'Correct Best Answer', correct: true },
+      { label: 'd', text: 'Incorrect', correct: false },
+      { label: 'e', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 1.2,
+    stem: 'Concerning/In [Insert Another Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement A]' },
+      { label: 'b', text: '[Statement B]' },
+      { label: 'c', text: '[Statement C]' },
+      { label: 'd', text: '[Statement D]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Correct Best Answer', correct: true },
+      { label: 'c', text: 'Incorrect', correct: false },
+      { label: 'd', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 1.3,
+    stem: 'Describe in your own words the key principles underlying [Insert Topic Here]:',
+    statements: [],
+    answers: [],
+    explanation: '[Insert a model answer or key points that should be covered in the free-text response.]',
+    freeText: true,
+  },
+]} />
+
+        <FranzcrShortCase
+          title="Case Reporting Short Case"
+        />
+      </div>
+    </section>
+
+    <!-- Exam Divider -->
+    <div class="exam-divider">
+      <div class="exam-divider-line"></div>
+      <span class="exam-divider-label">Next Exam</span>
+      <div class="exam-divider-line"></div>
+    </div>
+
+    <!-- ==================== CERTIFYING EXAM ==================== -->
+    <section class="section section-abr-certifying" id="certifying-exam">
+      <div class="container">
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-abr-certifying">Certifying Exam</span>
+          <h2 class="section-title text-center">Certifying Exam</h2>
+          <p class="section-subtitle">
+            Medium case and core case practice for the ABR Certifying Exam
+          </p>
+        </div>
+
+        <FranzcrMediumCase
+          title="Case Reporting Medium Case"
+        />
+
+        <h3 class="section-title" style="margin-top: 2rem;">Sample Core Case Question</h3>
+
+        <Corecases questions={[
+  {
+    number: 1.1,
+    stem: 'Concerning/In [Insert Core Case Topic or Core Statement Here]: may have DICOM or .jpg/.png image references',
+    statements: [
+      { label: 'a', text: '[Statement 1]' },
+      { label: 'b', text: '[Statement 2]' },
+      { label: 'c', text: '[Statement 3]' },
+      { label: 'd', text: '[Statement 4]' },
+      { label: 'e', text: '[Statement 5]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Incorrect', correct: false },
+      { label: 'c', text: 'Correct Best Answer', correct: true },
+      { label: 'd', text: 'Incorrect', correct: false },
+      { label: 'e', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 1.2,
+    stem: 'Concerning/In [Insert Another Core Case Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement A]' },
+      { label: 'b', text: '[Statement B]' },
+      { label: 'c', text: '[Statement C]' },
+      { label: 'd', text: '[Statement D]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Correct Best Answer', correct: true },
+      { label: 'c', text: 'Incorrect', correct: false },
+      { label: 'd', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 1.3,
+    stem: 'Describe in your own words the key principles underlying [Insert Topic Here]:',
+    statements: [],
+    answers: [],
+    explanation: '[Insert a model answer or key points that should be covered in the free-text response.]',
+    freeText: true,
+  },
+]} />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
