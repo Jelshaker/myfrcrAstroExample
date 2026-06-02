@@ -84,6 +84,38 @@ import Footer from '../../components/footer.astro';
         </div>
       </div>
     </section>
+
+    <!-- SBA Sample Question Section -->
+    <section class="section section-gray" id="sba-sample">
+      <div class="container">
+        <h2 class="section-title text-center">Sample SBA Question</h2>
+        <p class="section-subtitle">Live practice question in the Single Best Answer format with answer and explanation</p>
+
+        <div class="questions-grid">
+          <SBA
+            question={{
+              number: 1,
+              stem: 'Concerning/In [Insert Topic or Core Statement Here]:',
+              statements: [
+                { label: 'a', text: '[Statement 1]' },
+                { label: 'b', text: '[Statement 2]' },
+                { label: 'c', text: '[Statement 3]' },
+                { label: 'd', text: '[Statement 4]' },
+                { label: 'e', text: '[Statement 5]' },
+              ],
+              answers: [
+                { label: 'a', text: 'Incorrect', correct: false },
+                { label: 'b', text: 'Incorrect', correct: false },
+                { label: 'c', text: 'Correct Best Answer', correct: true },
+                { label: 'd', text: 'Incorrect', correct: false },
+                { label: 'e', text: 'Incorrect', correct: false },
+              ],
+              explanation: '[Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+            }}
+          />
+        </div>
+      </div>
+    </section>
   </main>
 
   

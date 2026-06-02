@@ -1,166 +1,58 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../components/navbar.astro';
-import Subnav from '../../components/subnav.astro';
-import PhysicsCard from '../../components/questions/myfrcrphysics.astro'; // Consider renaming this component wrapper if reused for 2A
-import QuestionCard from '../../components/questioncard.astro';
-import Footer from '../../components/footer.astro';
+export interface SBAStatement {
+  label: string; // a, b, c, d, e
+  text: string;
+}
+
+export interface SBAAnswer {
+  label: string; // a, b, c, d, e
+  text: string; // e.g. "Correct Best Answer" or "Incorrect"
+  correct: boolean;
+}
+
+export interface SBAQuestion {
+  number: number;
+  stem: string;
+  statements: SBAStatement[];
+  answers: SBAAnswer[];
+  explanation: string;
+}
+
+export interface Props {
+  question: SBAQuestion;
+}
+
+const { question } = Astro.props;
+const { number, stem, statements, answers, explanation } = question;
 ---
 
-<Layout title="FRCR Part 2A Questions – myFRCR - FRCR Exam - MyFRCR.com" theme="myfrcr">
-  <Navbar />
-  <Subnav links={[
-    { label: 'Part A Physics', href: '/myfrcr/myfrcrpart1a' },
-    { label: 'Part 2A', href: '/myfrcr/myfrcrpart2a' },
-    { label: 'Part 2B Shorts & Long Cases', href: '/myfrcr/myfrcrpart2b' },
-  ]} />
+<div class="question-block">
+  <h3 class="question-heading">### Question {number}</h3>
 
-  <main class="has-subnav">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-bg-pattern">
-        <div class="hero-gradient-1"></div>
-        <div class="hero-gradient-2"></div>
-      </div>
-      <div class="hero-content">
-        <div class="hero-inner">
-          <h1 class="hero-title">
-            FRCR Part 2A Questions
-            <span class="hero-title-gradient">SBA & Clinical Resources</span>
-          </h1>
-          <p class="hero-description">
-            Access official RCR specimen questions and comprehensive SBA resources to prepare for your FRCR Part 2A (CR2A) examination.
-          </p>
-          <div class="hero-stats">
-            <div class="stat-card"><p class="stat-card-text">RCR Official Specimen</p></div>
-            <div class="stat-card"><p class="stat-card-text">Core Clinical Modules</p></div>
-            <div class="stat-card"><p class="stat-card-text">Part 2A CR2A</p></div>
-            <div class="stat-card"><p class="stat-card-text">Detailed Explanations</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <p class="question-stem">
+    <strong>Stem:</strong> {stem}
+  </p>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-number">RCR</div>
-            <div class="stat-label">Official Questions</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">SBA</div>
-            <div class="stat-label">Exam Format</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">Part 2A</div>
-            <div class="stat-label">CR2A Exam</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Free Access</div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <ol class="question-options" type="a">
+    {statements.map((stmt) => (
+      <li>{stmt.text}</li>
+    ))}
+  </ol>
 
-    <!-- Resources Card Section -->
-    <section class="section section-white" id="clinical-resources">
-      <div class="container">
-        <h2 class="section-title text-center">Part 2A Specimen Questions</h2>
-        <p class="section-subtitle">Official RCR FRCR Part 2A CR2A Single Best Answer (SBA) specimen questions</p>
+  <div class="answers-section">
+    <h4>Answer Options:</h4>
+    <ul class="answers-list">
+      {answers.map((ans) => (
+        <li><strong>({ans.label})</strong> {ans.text} {ans.correct ? <span style="color: green; float: right;">&#10003;</span> : <span style="color: red; float: right;">&#10007;</span>}</li>
+      ))}
+    </ul>
 
-        <div class="cards-grid">
-          <PhysicsCard
-            resource={{
-              title: 'FRCR Part 2A Clinical SBA',
-              description: 'Official RCR specimen questions for the FRCR Part 2A CR2A examination. These questions cover the core clinical systems including Cardiothoracic/Vascular, Musculoskeletal, Gastrointestinal, Genitourinary, Neuroradiology, and Paediatrics.',
-              href: 'https://www.rcr.ac.uk/exams-training/rcr-exams/clinical-radiology-exams/frcr-part-2a-radiology-cr2a/',
-              badge: 'Official RCR Resource',
-            }}
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Sample Questions Section -->
-    <section class="section section-gray" id="sample-questions">
-      <div class="container">
-        <h2 class="section-title text-center">Example SBA Question</h2>
-        <p class="section-subtitle">Live practice question in the RCR Part 2A Single Best Answer format with answer and explanation</p>
-
-        <div class="questions-grid">
-          <QuestionCard
-            question={{
-              number: 1,
-              stem: 'A 55-year-old male presents with sudden onset severe chest pain radiating to his back. A CT pulmonary angiogram / aortic study is performed which demonstrates an intimal tear in the ascending aorta extending into the descending thoracic aorta. According to the Stanford classification, which type of aortic dissection is this?',
-              statements: [
-                { label: 'a', text: 'Type A' },
-                { label: 'b', text: 'Type B' },
-                { label: 'c', text: 'Type I' },
-                { label: 'd', text: 'Type II' },
-                { label: 'e', text: 'Type III' },
-              ],
-              answers: [
-                { label: 'a', correct: true, explanation: 'The Stanford classification divides dissections into Type A and Type B. Type A involves the ascending aorta (regardless of the site of origin or distal extension). Because this dissection involves the ascending aorta, it is classified as Stanford Type A (which corresponds to DeBakey Type I in this specific case).' },
-                { label: 'b', correct: false, explanation: 'Stanford Type B dissections do not involve the ascending aorta; they involve only the descending aorta distal to the left subclavian artery.' },
-                { label: 'c', correct: false, explanation: 'Type I belongs to the DeBakey classification system, not the Stanford classification system requested in the prompt.' },
-                { label: 'd', correct: false, explanation: 'Type II belongs to the DeBakey classification system (confined to the ascending aorta).' },
-                { label: 'e', correct: false, explanation: 'Type III belongs to the DeBakey classification system (confined to the descending aorta).' },
-              ],
-            }}
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section" id="about">
-      <div class="container">
-        <div class="about-grid">
-          <div>
-            <h6 class="about-label">About FRCR Part 2A Questions</h6>
-            <h2 class="about-title">Master the Exam with Single Best Answers</h2>
-            <p class="about-desc" style="margin-top: 1rem;">
-              The FRCR Part 2A (CR2A) specimen questions are provided by the Royal College of Radiologists (RCR) to aid candidates in mastering the Single Best Answer (SBA) format. The exam assesses a candidate\'s knowledge of core clinical radiology and pathophysiology across all major organ systems.
-            </p>
-            <div class="about-stats-grid" style="margin-top: 1.5rem;">
-              <div class="about-stat-card">
-                <h4 class="about-stat-number">RCR Standard</h4>
-                <p class="about-stat-desc">Official specimen curriculum alignment from the Royal College of Radiologists.</p>
-              </div>
-              <div class="about-stat-card">
-                <h4 class="about-stat-number">6 Core Modules</h4>
-                <p class="about-stat-desc">Covers Cardiothoracic, MSK, GI, GU, Neuro, and Paediatric radiology.</p>
-              </div>
-            </div>
-            <div class="about-stats-grid" style="margin-top: 1rem;">
-              <div class="about-stat-card">
-                <h4 class="about-stat-number">SBA Structure</h4>
-                <p class="about-stat-desc">Questions reflect clinical scenarios requiring candidates to select the single best option.</p>
-              </div>
-              <div class="about-stat-card">
-                <h4 class="about-stat-number">Free Resource</h4>
-                <p class="about-stat-desc">Freely available guidelines and syllabus materials on the RCR website.</p>
-              </div>
-            </div>
-            <a href={`${import.meta.env.BASE_URL}contact`} class="read-more-link" style="margin-top: 1.5rem;">
-              <span>Contact Us</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </a>
-          </div>
-          <div style="display: flex; justify-content: center; align-items: center;">
-            <div style="width: 100%; max-width: 564px; background: var(--color-gray-100); border-radius: var(--radius-2xl); border: 1px solid var(--color-gray-200); padding: 1.25rem;">
-              <img src={`${import.meta.env.BASE_URL}assets/myfrcrlogo white background.png`} alt="myFRCR Platform" style="width: 100%; height: auto; border-radius: var(--radius-2xl); object-fit: cover;" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <Footer />
-</Layout>
+    <div
+      class="explanation-box"
+      style="margin-top: 15px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;"
+    >
+      <h5>Explanation:</h5>
+      <p>{explanation}</p>
+    </div>
+  </div>
+</div>
