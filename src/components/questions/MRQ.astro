@@ -71,14 +71,14 @@ const subtitle = Astro.props.subtitle || 'Live practice questions in the Multipl
           </p>
 
           {q.freeText ? (
-            <div class="free-text-area" style="margin-top: 15px;">
-              <label for={`free-text-${q.number}`} style="display: block; margin-bottom: 8px; font-weight: bold;">
+            <div class="free-text-area">
+              <label for={`free-text-${q.number}`} class="free-text-label">
                 Your Answer:
               </label>
               <textarea
                 id={`free-text-${q.number}`}
                 rows="6"
-                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; font-size: 1rem; resize: vertical;"
+                class="free-text-input"
                 placeholder="Type your answer here..."
               ></textarea>
             </div>
@@ -92,10 +92,7 @@ const subtitle = Astro.props.subtitle || 'Live practice questions in the Multipl
 
           <div class="answers-section">
             {q.freeText ? (
-              <div
-                class="explanation-box"
-                style="margin-top: 15px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;"
-              >
+              <div class="explanation-box">
                 <h5>Model Answer / Guidance:</h5>
                 <p>{q.explanation}</p>
               </div>
@@ -107,16 +104,13 @@ const subtitle = Astro.props.subtitle || 'Live practice questions in the Multipl
                     <li>
                       <strong>({ans.label})</strong> {ans.text}{' '}
                       {ans.correct
-                        ? <span style="color: green; float: right;">&#10003;</span>
-                        : <span style="color: red; float: right;">&#10007;</span>}
+                        ? <span class="correct-mark">&#10003;</span>
+                        : <span class="incorrect-mark">&#10007;</span>}
                     </li>
                   ))}
                 </ul>
 
-                <div
-                  class="explanation-box"
-                  style="margin-top: 15px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;"
-                >
+                <div class="explanation-box">
                   <h5>Explanation:</h5>
                   <p>{q.explanation}</p>
                 </div>

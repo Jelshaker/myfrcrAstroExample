@@ -85,9 +85,9 @@ const subtitle = Astro.props.subtitle || 'Live practice question in the Single B
             {answers.map((ans) => (
               <li>
                 <strong>({ans.label})</strong> {ans.text}{' '}
-                {ans.correct
-                  ? <span style="color: green; float: right;">&#10003;</span>
-                  : <span style="color: red; float: right;">&#10007;</span>}
+                  {ans.correct
+                    ? <span class="correct-mark">&#10003;</span>
+                    : <span class="incorrect-mark">&#10007;</span>}
               </li>
             ))}
           </ul>

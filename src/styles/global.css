@@ -1981,6 +1981,76 @@ button {
 }
 
 /* ============================================
+   Question Answer Marks (green/red)
+   ============================================ */
+.correct-mark {
+  color: green;
+  float: right;
+}
+
+.incorrect-mark {
+  color: red;
+  float: right;
+}
+
+/* ============================================
+   Explanation Box
+   ============================================ */
+.explanation-box {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.explanation-box h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-gray-900);
+}
+
+.explanation-box p {
+  font-size: 0.9375rem;
+  color: var(--color-gray-700);
+  line-height: 1.6;
+}
+
+/* ============================================
+   Free Text Area Styles
+   ============================================ */
+.free-text-area {
+  margin-top: 15px;
+}
+
+.free-text-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.free-text-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   Questions Grid
+   ============================================ */
+.questions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ============================================
    Pathology SAQ Card Styles
    ============================================ */
 .pathology-saq-card:not(:first-child) {
@@ -2081,4 +2151,271 @@ button {
   .cards-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
+}
+
+/* ============================================
+   Case Reporting Styles (Short/Medium/Long Case)
+   Shared by franzcrshortcase, franzcrmediumcase, franzcrlongcase
+   ============================================ */
+
+/* Answer textarea */
+.shortcase-answer-input,
+.mediumcase-answer-input,
+.longcase-answer-input,
+.saq-answer-input {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.shortcase-answer-input:focus,
+.mediumcase-answer-input:focus,
+.longcase-answer-input:focus,
+.saq-answer-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.saq-answer-input {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+/* Card containers */
+.shortcase-card,
+.mediumcase-card,
+.longcase-card,
+.pathology-saq-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.shortcase-card h2,
+.mediumcase-card h2,
+.longcase-card h2,
+.pathology-saq-card h2 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+/* Card field shared */
+.card-field {
+  margin-bottom: 12px;
+}
+
+.card-field h3 {
+  color: #34495e;
+  font-size: 1.05rem;
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+.card-field p {
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+.card-field .marks {
+  font-weight: bold;
+  color: #e67e22;
+  font-size: 1.1rem;
+}
+
+/* Rubric section shared */
+.rubric-section {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f8fafc;
+}
+
+.rubric-section h3 {
+  color: #2c3e50;
+  font-size: 1.05rem;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.rubric-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.rubric-row:last-child {
+  border-bottom: none;
+}
+
+.rubric-bullet {
+  color: #888;
+  min-width: 12px;
+}
+
+.rubric-finding {
+  color: #333;
+  flex: 1;
+}
+
+.rubric-criteria {
+  font-weight: 600;
+  color: #2c3e50;
+  min-width: 140px;
+}
+
+.rubric-diagnosis {
+  color: #333;
+  font-style: italic;
+  flex: 1;
+}
+
+.rubric-marks {
+  color: #e67e22;
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Rubric subsections */
+.rubric-subsection {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.rubric-subsection:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.rubric-subsection h4 {
+  color: #34495e;
+  font-size: 1rem;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.rubric-total {
+  color: #888;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.rubric-note {
+  color: #888;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin: 6px 0 0;
+  padding: 0;
+}
+
+/* Long case specific */
+.rubric-diagnosis-row {
+  padding-top: 8px;
+  border-top: 1px solid #ddd;
+}
+
+.rubric-total-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 2px solid #ddd;
+  margin-top: 8px;
+}
+
+.rubric-total-row .rubric-criteria {
+  min-width: auto;
+}
+
+.rubric-total-row .rubric-marks {
+  font-size: 1.05rem;
+}
+
+/* Pathology SAQ specific */
+.pathology-saq-card h2 {
+  color: #2c3e50;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.pathology-saq-card h3 {
+  color: #34495e;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.pathology-saq-card h4 {
+  color: #3e5a7a;
+  margin-bottom: 4px;
+  font-size: 1.05rem;
+}
+
+.pathology-saq-card h5 {
+  color: #4a6a8a;
+  margin: 8px 0 4px;
+  font-size: 1rem;
+}
+
+.pathology-saq-card p {
+  margin: 4px 0 8px;
+  line-height: 1.6;
+}
+
+.mark-weighting {
+  color: #555;
+  font-style: italic;
+}
+
+.sub-questions {
+  margin-top: 16px;
+}
+
+.sub-question-block {
+  padding: 12px;
+  margin-bottom: 12px;
+  border-left: 3px solid #3498db;
+  background: #f8fafc;
+  border-radius: 0 4px 4px 0;
+}
+
+.rubric-section ul {
+  list-style: none;
+  padding-left: 12px;
+  margin: 4px 0;
+}
+
+.rubric-section li {
+  padding: 2px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.pathology-saq-footer {
+  margin-top: 20px;
+  padding: 12px;
+  border-top: 2px solid #eee;
+  text-align: center;
+  color: #666;
 }
