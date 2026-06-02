@@ -1,35 +1,35 @@
 ---
-export interface shortcasesstatement {
+export interface corecasesstatement {
   label: string; // a, b, c, d, e
   text: string;
 }
 
-export interface shortcasesanswer {
+export interface corecasesanswer {
   label: string; // a, b, c, d, e
   text: string; // e.g. "Correct Best Answer" or "Incorrect"
   correct: boolean;
 }
 
-export interface shortcasesquestion {
+export interface corecasesquestion {
   number: number;
   stem: string;
-  statements: shortcasesstatement[];
-  answers: shortcasesanswer[];
+  statements: corecasesstatement[];
+  answers: corecasesanswer[];
   explanation: string;
   freeText?: boolean; // if true, shows a text box instead of checkbox statements
 }
 
 export interface Props {
-  questions?: shortcasesquestion[];
+  questions?: corecasesquestion[];
   sectionId?: string;
   title?: string;
   subtitle?: string;
 }
 
-const defaultQuestions: shortcasesquestion[] = [
+const defaultQuestions: corecasesquestion[] = [
   {
     number: 1,
-    stem: 'Concerning/In [Insert Topic or Core Statement Here]: / may include .jpg or .png images',
+    stem: 'Concerning/In [Insert Core Case Topic or Core Statement Here]: / may include .jpg or .png images',
     statements: [
       { label: 'a', text: '[Statement 1]' },
       { label: 'b', text: '[Statement 2]' },
@@ -49,7 +49,7 @@ const defaultQuestions: shortcasesquestion[] = [
   },
   {
     number: 2,
-    stem: 'Concerning/In [Insert Another Topic or Core Statement Here]: / may include .jpg or .png images',
+    stem: 'Concerning/In [Insert Another Core Case Topic or Core Statement Here]: / may include .jpg or .png images',
     statements: [
       { label: 'a', text: '[Statement A]' },
       { label: 'b', text: '[Statement B]' },
@@ -76,9 +76,9 @@ const defaultQuestions: shortcasesquestion[] = [
 ];
 
 const { questions = defaultQuestions } = Astro.props;
-const sectionId = Astro.props.sectionId || 'shortcases-sample';
-const title = Astro.props.title || 'Sample Short Cases Questions';
-const subtitle = Astro.props.subtitle || 'Live practice questions in the Short Cases format with answers and explanations';
+const sectionId = Astro.props.sectionId || 'corecases-sample';
+const title = Astro.props.title || 'Sample Core Cases Questions';
+const subtitle = Astro.props.subtitle || 'Live practice questions in the Core Cases format with answers and explanations';
 ---
 
 <section class="section section-gray" id={sectionId}>
@@ -110,7 +110,7 @@ const subtitle = Astro.props.subtitle || 'Live practice questions in the Short C
           ) : (
             <ol class="question-options" type="a">
               {q.statements.map((stmt) => (
-                <li><input type="checkbox" name={`shortcases-question-${q.number}`} /> {stmt.text}</li>
+                <li><input type="checkbox" name={`corecases-question-${q.number}`} /> {stmt.text}</li>
               ))}
             </ol>
           )}
