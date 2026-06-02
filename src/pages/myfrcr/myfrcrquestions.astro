@@ -5,6 +5,7 @@ import Subnav from '../../components/subnav.astro';
 import PhysicsCard from '../../components/questions/myfrcrphysics.astro';
 import QuestionCard from '../../components/questioncard.astro';
 import SBA from '../../components/questions/SBA.astro';
+import CoreCases from '../../components/questions/corecases.astro';
 import Footer from '../../components/footer.astro';
 ---
 
@@ -66,10 +67,16 @@ import Footer from '../../components/footer.astro';
       </div>
     </section>
 
-
-    <section class="section" id="frcr-physics">
+    <!-- ==================== FRCR PHYSICS SECTION ==================== -->
+    <section class="section section-physics" id="frcr-physics">
       <div class="container">
-        <h2 class="section-title text-center">FRCR Physics</h2>
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-physics">Part 1 CR1</span>
+          <h2 class="section-title text-center">FRCR Physics</h2>
+          <p class="section-subtitle">
+            Master the physics principles tested in the FRCR Part 1 CR1 examination. Practice with official RCR specimen Single Best Answer questions covering radiation physics, imaging equipment, and safety.
+          </p>
+        </div>
         <PhysicsCard
           resource={{
             title: 'FRCR Physics Specimen Questions',
@@ -81,12 +88,48 @@ import Footer from '../../components/footer.astro';
       </div>
     </section>
 
-    <section class="section" id="frcr-2a">
+    <!-- Exam Divider -->
+    <div class="exam-divider">
+      <div class="exam-divider-line"></div>
+      <span class="exam-divider-label">Next Paper</span>
+      <div class="exam-divider-line"></div>
+    </div>
+
+    <!-- ==================== FRCR 2A SECTION ==================== -->
+    <section class="section section-2a" id="frcr-2a">
       <div class="container">
-        <h2 class="section-title text-center">FRCR 2A</h2>
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-2a">Part 2A</span>
+          <h2 class="section-title text-center">FRCR 2A</h2>
+          <p class="section-subtitle">
+            Prepare for the FRCR Part 2A examination with Single Best Answer questions covering radiological anatomy, disease patterns, and clinical radiology core knowledge.
+          </p>
+        </div>
         <SBA />
+      </div>
+    </section>
+
+    <!-- Exam Divider -->
+    <div class="exam-divider">
+      <div class="exam-divider-line"></div>
+      <span class="exam-divider-label">Next Paper</span>
+      <div class="exam-divider-line"></div>
+    </div>
+
+    <!-- ==================== FRCR 2B LONGS SECTION ==================== -->
+    <section class="section section-2b-longs" id="frcr-2b-longs">
+      <div class="container">
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-2b">Part 2B</span>
+          <h2 class="section-title text-center">FRCR 2B Long Cases</h2>
+          <p class="section-subtitle">
+            Test your reporting skills with complete long case scenarios covering chest, musculoskeletal, gastrointestinal, neurological, and paediatric imaging. Each case includes clinical history, full imaging findings with a structured marking rubric.
+          </p>
+        </div>
+        
       </div>
     </section>
   </main>
 
   
+</Layout>

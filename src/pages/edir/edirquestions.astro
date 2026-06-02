@@ -67,12 +67,14 @@ import Footer from '../../components/footer.astro';
       </div>
     </section>
 
-    <!-- Written Exam Section -->
-    <section class="section section-gray" id="written-exam">
+    <!-- ==================== WRITTEN EXAM ==================== -->
+    <section class="section section-edir-written" id="written-exam">
       <div class="container">
-        <h2 class="section-title text-center">Written Exam</h2>
-        <p class="section-subtitle">Sample Multiple Response (MRQ) and Short Cases questions with detailed answers and explanations</p>
-
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-edir-written">Written Exam</span>
+          <h2 class="section-title text-center">Written Exam</h2>
+          <p class="section-subtitle">Sample Multiple Response (MRQ) and Short Cases questions with detailed answers and explanations</p>
+        </div>
         <MRQ
           sectionId="mrq-sample"
           title="Sample MRQ Question"
@@ -83,7 +85,7 @@ import Footer from '../../components/footer.astro';
 
         <Shortcases questions={[
   {
-    number: 1,
+    number: 1.1,
     stem: 'Concerning/In [Insert Topic or Core Statement Here]: / may include .jpg or .png images',
     statements: [
       { label: 'a', text: '[Statement 1]' },
@@ -103,7 +105,7 @@ import Footer from '../../components/footer.astro';
     freeText: false,
   },
   {
-    number: 2,
+    number: 1.2,
     stem: 'Concerning/In [Insert Another Topic or Core Statement Here]: / may include .jpg or .png images',
     statements: [
       { label: 'a', text: '[Statement A]' },
@@ -121,7 +123,7 @@ import Footer from '../../components/footer.astro';
     freeText: false,
   },
   {
-    number: 3,
+    number: 1.3,
     stem: 'Describe in your own words the key principles underlying [Insert Topic Here]:',
     statements: [],
     answers: [],
@@ -132,15 +134,24 @@ import Footer from '../../components/footer.astro';
       </div>
     </section>
 
-    <!-- Core Exam Section -->
-    <section class="section section-white" id="core-exam">
-      <div class="container">
-        <h2 class="section-title text-center">Core Exam</h2>
-        <p class="section-subtitle">Sample Core Cases questions with detailed clinical reasoning and explanations</p>
+    <!-- Exam Divider -->
+    <div class="exam-divider">
+      <div class="exam-divider-line"></div>
+      <span class="exam-divider-label">Next Paper</span>
+      <div class="exam-divider-line"></div>
+    </div>
 
+    <!-- ==================== CORE EXAM ==================== -->
+    <section class="section section-edir-core" id="core-exam">
+      <div class="container">
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-edir-core">Core Exam</span>
+          <h2 class="section-title text-center">Core Exam</h2>
+          <p class="section-subtitle">Sample Core Cases questions with detailed clinical reasoning and explanations</p>
+        </div>
         <Corecases questions={[
   {
-    number: 1,
+    number: 1.1,
     stem: 'Concerning/In [Insert Core Case Topic or Core Statement Here]: may have DICOM or .jpg/.png image references',
     statements: [
       { label: 'a', text: '[Statement 1]' },
@@ -160,7 +171,7 @@ import Footer from '../../components/footer.astro';
     freeText: false,
   },
   {
-    number: 2,
+    number: 1.2,
     stem: 'Concerning/In [Insert Another Core Case Topic or Core Statement Here]: / may include .jpg or .png images',
     statements: [
       { label: 'a', text: '[Statement A]' },
@@ -178,7 +189,7 @@ import Footer from '../../components/footer.astro';
     freeText: false,
   },
   {
-    number: 3,
+    number: 1.3,
     stem: 'Describe in your own words the key principles underlying [Insert Topic Here]:',
     statements: [],
     answers: [],

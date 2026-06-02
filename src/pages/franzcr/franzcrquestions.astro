@@ -67,12 +67,14 @@ import FranzcrLongCase from '../../components/questions/franzcrlongcase.astro';
       </div>
     </section>
 
-    <!-- Radiology MCQ Section -->
-    <section class="section section-gray" id="radiology-mcq">
+    <!-- ==================== PHASE 2 RADIOLOGY MCQ ==================== -->
+    <section class="section section-franzcr-mcq" id="radiology-mcq">
       <div class="container">
-        <h2 class="section-title text-center">Phase 2 Radiology MCQ</h2>
-        <p class="section-subtitle">Sample MRQ with detailed answers and explanations</p>
-
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-franzcr-mcq">Phase 2</span>
+          <h2 class="section-title text-center">Phase 2 Radiology MCQ</h2>
+          <p class="section-subtitle">Sample MRQ with detailed answers and explanations</p>
+        </div>
         <MRQ
           sectionId="mrq-sample"
           title="Sample MRQ Question"
@@ -81,12 +83,21 @@ import FranzcrLongCase from '../../components/questions/franzcrlongcase.astro';
       </div>
     </section>
 
-    <!-- Pathology SAQ Section -->
-    <section class="section section-white" id="pathology-saq">
-      <div class="container">
-        <h2 class="section-title text-center">Phase 2 Pathology - Pathology MCQ and Pathology SAQ</h2>
-        <p class="section-subtitle">Clinical cases with structured marking criteria for pathology topics</p>
+    <!-- Exam Divider -->
+    <div class="exam-divider">
+      <div class="exam-divider-line"></div>
+      <span class="exam-divider-label">Next Paper</span>
+      <div class="exam-divider-line"></div>
+    </div>
 
+    <!-- ==================== PHASE 2 PATHOLOGY ==================== -->
+    <section class="section section-franzcr-pathology" id="pathology-saq">
+      <div class="container">
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-franzcr-pathology">Phase 2</span>
+          <h2 class="section-title text-center">Phase 2 Pathology - Pathology MCQ and Pathology SAQ</h2>
+          <p class="section-subtitle">Clinical cases with structured marking criteria for pathology topics</p>
+        </div>
         <PathologySAQTemplate
           title="Pathology SAQ Template"
           timeTarget="24 Marks (6 Marks Per Question)"
@@ -94,12 +105,21 @@ import FranzcrLongCase from '../../components/questions/franzcrlongcase.astro';
       </div>
     </section>
 
-    <!-- Case Reporting Section -->
-    <section class="section section-gray" id="case-reporting">
-      <div class="container">
-        <h2 class="section-title text-center">Case Reporting</h2>
-        <p class="section-subtitle">Short, medium, and long case practice for the FranzCR Case Reporting exam component</p>
+    <!-- Exam Divider -->
+    <div class="exam-divider">
+      <div class="exam-divider-line"></div>
+      <span class="exam-divider-label">Next Paper</span>
+      <div class="exam-divider-line"></div>
+    </div>
 
+    <!-- ==================== CASE REPORTING ==================== -->
+    <section class="section section-franzcr-casereporting" id="case-reporting">
+      <div class="container">
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-franzcr-cr">Case Reporting</span>
+          <h2 class="section-title text-center">Case Reporting</h2>
+          <p class="section-subtitle">Short, medium, and long case practice for the FranzCR Case Reporting exam component</p>
+        </div>
         <FranzcrShortCase
           title="Case Reporting Short Case"
         />
