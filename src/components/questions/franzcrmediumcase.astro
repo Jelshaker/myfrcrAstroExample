@@ -1,0 +1,246 @@
+---
+export interface FindingRubricItem {
+  observation: string;
+  mark: number;
+}
+
+export interface MediumCaseCard {
+  questionNumber: number;
+  history: string;
+  imaging: string;
+  maxMarks: number; // 6
+  findings: FindingRubricItem[];
+  diagnosis: string;
+  diagnosisMarks: number; // 2
+}
+
+export interface Props {
+  title?: string;
+  cards?: MediumCaseCard[];
+}
+
+const defaultCards: MediumCaseCard[] = [
+  {
+    questionNumber: 1,
+    history: "[Insert brief 1-sentence clinical history]",
+    imaging: "[Insert modalities, sequences, and slice/image counts]",
+    maxMarks: 6,
+    findings: [
+      { observation: "[Observation 1 / Primary anatomical abnormality]", mark: 1 },
+      { observation: "[Observation 2 / Specific lesion characteristics or dimensions]", mark: 0.5 },
+      { observation: "[Observation 3 / Surrounding structure involvement or secondary signs]", mark: 1 },
+      { observation: "[Observation 4 / Relevant negative or secondary modifier]", mark: 0.5 },
+    ],
+    diagnosis: "[Insert primary diagnosis]",
+    diagnosisMarks: 2,
+  },
+];
+
+const { title = "Case Reporting Medium Case", cards = defaultCards } = Astro.props;
+
+function findingsTotal(findings: FindingRubricItem[]): number {
+  return findings.reduce((sum, f) => sum + f.mark, 0);
+}
+---
+
+<main>
+  <h1>{title}</h1>
+
+  {cards.map((card) => (
+    <div class="question-block mediumcase-card">
+      <h2>Question Number: {card.questionNumber}</h2>
+
+      <div class="card-field">
+        <h3>History:</h3>
+        <p>{card.history}</p>
+      </div>
+
+      <div class="card-field">
+        <h3>Imaging:</h3>
+        <p>{card.imaging}</p>
+      </div>
+
+      <div class="card-field">
+        <h3>Maximum Marks:</h3>
+        <p class="marks">{card.maxMarks}</p>
+      </div>
+
+      <textarea
+        class="mediumcase-answer-input"
+        rows="4"
+        placeholder="Type your answer here..."
+      ></textarea>
+
+      <div class="rubric-section">
+        <h3>Marking Rubric</h3>
+
+        <div class="rubric-subsection">
+          <h4>Findings <span class="rubric-total">(Total: {findingsTotal(card.findings)} marks)</span></h4>
+          {card.findings.map((item, idx) => (
+            <div class="rubric-row">
+              <span class="rubric-bullet">&#8226;</span>
+              <span class="rubric-finding">{item.observation}</span>
+              <span class="rubric-marks">({item.mark})</span>
+            </div>
+          ))}
+          <p class="rubric-note">*Ensure the total for Findings equals exactly 4 marks</p>
+        </div>
+
+        <div class="rubric-subsection">
+          <div class="rubric-row rubric-diagnosis-row">
+            <span class="rubric-criteria">Likely Diagnosis:</span>
+            <span class="rubric-diagnosis">{card.diagnosis}</span>
+            <span class="rubric-marks">({card.diagnosisMarks})</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</main>
+
+<style>
+  .mediumcase-answer-input {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    resize: vertical;
+    box-sizing: border-box;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .mediumcase-answer-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+  }
+
+  .mediumcase-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .mediumcase-card h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+  }
+
+  .card-field {
+    margin-bottom: 12px;
+  }
+
+  .card-field h3 {
+    color: #34495e;
+    font-size: 1.05rem;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+
+  .card-field p {
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .card-field .marks {
+    font-weight: bold;
+    color: #e67e22;
+    font-size: 1.1rem;
+  }
+
+  .rubric-section {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f8fafc;
+  }
+
+  .rubric-section h3 {
+    color: #2c3e50;
+    font-size: 1.05rem;
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+
+  .rubric-subsection {
+    margin-bottom: 12px;
+  }
+
+  .rubric-subsection:last-child {
+    margin-bottom: 0;
+  }
+
+  .rubric-subsection h4 {
+    color: #34495e;
+    font-size: 1rem;
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+
+  .rubric-total {
+    color: #888;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+
+  .rubric-note {
+    color: #888;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin: 6px 0 0;
+    padding: 0;
+  }
+
+  .rubric-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 4px 0;
+  }
+
+  .rubric-bullet {
+    color: #888;
+    min-width: 12px;
+  }
+
+  .rubric-finding {
+    color: #333;
+    flex: 1;
+  }
+
+  .rubric-criteria {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 140px;
+  }
+
+  .rubric-diagnosis {
+    color: #333;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .rubric-marks {
+    color: #e67e22;
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .rubric-diagnosis-row {
+    padding-top: 8px;
+    border-top: 1px solid #ddd;
+  }
+</style>

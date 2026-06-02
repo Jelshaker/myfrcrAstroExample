@@ -1,0 +1,314 @@
+---
+export interface RubricItem {
+  point: string;
+  mark: number; // e.g., 0.5
+}
+
+export interface SubQuestion {
+  number: number; // e.g., 1.1, 1.2
+  text: string;
+  mark: string; // e.g., "Maximum of 2 marks"
+  rubric: RubricItem[];
+}
+
+export interface PathologySAQCard {
+  questionNumber: number;
+  history: string;
+  maxMarks: number; // 6
+  subQuestions: SubQuestion[];
+}
+
+export interface Props {
+  title?: string;
+  timeTarget?: string;
+  cards?: PathologySAQCard[];
+}
+
+const defaultCards: PathologySAQCard[] = [
+  {
+    questionNumber: 1,
+    history: "[Insert 1-2 sentence clinical history or a specific disease topic]",
+    maxMarks: 6,
+    subQuestions: [
+      {
+        number: 1.1,
+        text: "[Insert question text]",
+        mark: "Maximum of 2 marks",
+        rubric: [
+          { point: "[Point 1]", mark: 0.5 },
+          { point: "[Point 2]", mark: 0.5 },
+        ],
+      },
+      {
+        number: 1.2,
+        text: "[Insert question text]",
+        mark: "Maximum of 1 mark",
+        rubric: [
+          { point: "[Point 1]", mark: 0.5 },
+        ],
+      },
+    ],
+  },
+  {
+    questionNumber: 2,
+    history: "[Insert 1-2 sentence clinical history or a specific disease topic]",
+    maxMarks: 6,
+    subQuestions: [
+      {
+        number: 2.1,
+        text: "[Insert question text]",
+        mark: "Maximum of 2 marks",
+        rubric: [
+          { point: "[Point 1]", mark: 0.5 },
+          { point: "[Point 2]", mark: 0.5 },
+          { point: "[Point 3]", mark: 0.5 },
+          { point: "[Point 4]", mark: 0.5 },
+        ],
+      },
+      {
+        number: 2.2,
+        text: "[Insert question text]",
+        mark: "Maximum of 2 marks",
+        rubric: [
+          { point: "[Point 1]", mark: 0.5 },
+          { point: "[Point 2]", mark: 0.5 },
+          { point: "[Point 3]", mark: 0.5 },
+          { point: "[Point 4]", mark: 0.5 },
+        ],
+      },
+      {
+        number: 2.3,
+        text: "[Insert question text]",
+        mark: "Maximum of 2 marks",
+        rubric: [
+          { point: "[Point 1]", mark: 0.5 },
+          { point: "[Point 2]", mark: 0.5 },
+          { point: "[Point 3]", mark: 0.5 },
+          { point: "[Point 4]", mark: 0.5 },
+        ],
+      },
+    ],
+  },
+  {
+    questionNumber: 3,
+    history: "[Insert 1-2 sentence clinical history or a specific disease topic]",
+    maxMarks: 6,
+    subQuestions: [
+      {
+        number: 3.1,
+        text: "[Insert question text]",
+        mark: "Maximum of 3 marks",
+        rubric: [
+          { point: "[Point 1]", mark: 0.5 },
+          { point: "[Point 2]", mark: 0.5 },
+          { point: "[Point 3]", mark: 0.5 },
+          { point: "[Point 4]", mark: 0.5 },
+          { point: "[Point 5]", mark: 0.5 },
+          { point: "[Point 6]", mark: 0.5 },
+        ],
+      },
+      {
+        number: 3.2,
+        text: "[Insert question text]",
+        mark: "Maximum of 1.5 marks",
+        rubric: [
+          { point: "[Point 1]", mark: 0.5 },
+          { point: "[Point 2]", mark: 0.5 },
+          { point: "[Point 3]", mark: 0.5 },
+        ],
+      },
+      {
+        number: 3.3,
+        text: "[Insert question text]",
+        mark: "Maximum of 1.5 marks",
+        rubric: [
+          { point: "[Point 1]", mark: 0.5 },
+          { point: "[Point 2]", mark: 0.5 },
+          { point: "[Point 3]", mark: 0.5 },
+        ],
+      },
+    ],
+  },
+  {
+    questionNumber: 4,
+    history: "[Insert 1-2 sentence clinical history or a specific disease topic]",
+    maxMarks: 6,
+    subQuestions: [
+      {
+        number: 4.1,
+        text: "[Insert question text]",
+        mark: "Maximum of 2 marks",
+        rubric: [
+          { point: "[Point 1]", mark: 0.5 },
+          { point: "[Point 2]", mark: 0.5 },
+          { point: "[Point 3]", mark: 0.5 },
+          { point: "[Point 4]", mark: 0.5 },
+        ],
+      },
+      {
+        number: 4.2,
+        text: "[Insert question text]",
+        mark: "Maximum of 2 marks",
+        rubric: [
+          { point: "[Point 1]", mark: 0.5 },
+          { point: "[Point 2]", mark: 0.5 },
+          { point: "[Point 3]", mark: 0.5 },
+          { point: "[Point 4]", mark: 0.5 },
+        ],
+      },
+      {
+        number: 4.3,
+        text: "[Insert question text]",
+        mark: "Maximum of 2 marks",
+        rubric: [
+          { point: "[Point 1]", mark: 0.5 },
+          { point: "[Point 2]", mark: 0.5 },
+          { point: "[Point 3]", mark: 0.5 },
+          { point: "[Point 4]", mark: 0.5 },
+        ],
+      },
+    ],
+  },
+];
+
+const { title = "Pathology SAQ", timeTarget = "24 Marks (6 Marks Per Question)", cards = defaultCards } = Astro.props;
+---
+
+<main>
+  <h1>{title}</h1>
+
+  {cards.map((card) => (
+    <div class="question-block pathology-saq-card">
+      <h2>Question Number: {card.questionNumber}</h2>
+      <div class="history-section">
+        <h3>History/Lead-in:</h3>
+        <p>{card.history}</p>
+        <textarea class="saq-answer-input" rows="3" placeholder="Type your response to the history/lead-in here..."></textarea>
+      </div>
+      <p><strong>Maximum Marks:</strong> {card.maxMarks}</p>
+
+      <div class="sub-questions">
+        {card.subQuestions.map((sq) => (
+          <div class="sub-question-block">
+            <h4>Sub question {sq.number}:</h4>
+            <p>{sq.text}</p>
+            <textarea class="saq-answer-input" rows="3" placeholder="Type your answer here..."></textarea>
+            <p class="mark-weighting"><strong>Mark:</strong> {sq.mark}</p>
+            <div class="rubric-section">
+              <h5>Rubric:</h5>
+              <ul>
+                {sq.rubric.map((item) => (
+                  <li>- {item.point} ({item.mark})</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+
+  <footer class="pathology-saq-footer">
+    <p><strong>Time Target:</strong> {timeTarget}</p>
+  </footer>
+</main>
+
+<style>
+  .saq-answer-input {
+    width: 100%;
+    min-height: 60px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    resize: vertical;
+    box-sizing: border-box;
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+
+  .saq-answer-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+  }
+
+  .pathology-saq-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  }
+
+  .pathology-saq-card h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+  }
+
+  .pathology-saq-card h3 {
+    color: #34495e;
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+  }
+
+  .pathology-saq-card h4 {
+    color: #3e5a7a;
+    margin-bottom: 4px;
+    font-size: 1.05rem;
+  }
+
+  .pathology-saq-card h5 {
+    color: #4a6a8a;
+    margin: 8px 0 4px;
+    font-size: 1rem;
+  }
+
+  .pathology-saq-card p {
+    margin: 4px 0 8px;
+    line-height: 1.6;
+  }
+
+  .mark-weighting {
+    color: #555;
+    font-style: italic;
+  }
+
+  .sub-questions {
+    margin-top: 16px;
+  }
+
+  .sub-question-block {
+    padding: 12px;
+    margin-bottom: 12px;
+    border-left: 3px solid #3498db;
+    background: #f8fafc;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .rubric-section ul {
+    list-style: none;
+    padding-left: 12px;
+    margin: 4px 0;
+  }
+
+  .rubric-section li {
+    padding: 2px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .pathology-saq-footer {
+    margin-top: 20px;
+    padding: 12px;
+    border-top: 2px solid #eee;
+    text-align: center;
+    color: #666;
+  }
+</style>

@@ -1981,6 +1981,94 @@ button {
 }
 
 /* ============================================
+   Pathology SAQ Card Styles
+   ============================================ */
+.pathology-saq-card:not(:first-child) {
+  margin-top: 1.25rem;
+}
+
+.pathology-saq-card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-gray-100);
+}
+
+.pathology-saq-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin-bottom: 0.75rem;
+}
+
+.pathology-saq-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.pathology-saq-card h5 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.pathology-saq-card p {
+  font-size: 0.9375rem;
+  color: var(--color-gray-700);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.pathology-saq-card ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-top: 0.5rem;
+}
+
+.pathology-saq-card ul li {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--color-gray-700);
+  line-height: 1.5;
+  background: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-blue-400);
+}
+
+.pathology-saq-card ul li strong {
+  font-weight: 600;
+  color: var(--color-gray-900);
+}
+
+.pathology-saq-footer {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-slate-50);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+  text-align: center;
+}
+
+.pathology-saq-footer p {
+  font-size: 0.9375rem;
+  color: var(--color-gray-700);
+}
+
+.pathology-saq-footer strong {
+  color: var(--color-gray-900);
+}
+
+/* ============================================
    Cards Grid
    ============================================ */
 .cards-grid {

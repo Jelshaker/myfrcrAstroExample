@@ -1,0 +1,119 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/navbar.astro';
+import Subnav from '../../components/subnav.astro';
+import Footer from '../../components/footer.astro';
+import MRQ from '../../components/questions/MRQ.astro';
+import PathologySAQTemplate from '../../components/questions/pathologysaq.astro';
+import FranzcrShortCase from '../../components/questions/franzcrshortcase.astro';
+import FranzcrMediumCase from '../../components/questions/franzcrmediumcase.astro';
+import FranzcrLongCase from '../../components/questions/franzcrlongcase.astro';
+---
+
+<Layout title="FranzCR Questions – FranzCR Exam - MyFRCR.com" theme="franzcr">
+  <Navbar />
+  <Subnav links={[
+    { label: 'MCQ', href: '/franzcr/franzcr_mcq' },
+    { label: 'Pathology', href: '/franzcr/franzcr_pathology' },
+  ]} />
+
+  <main class="has-subnav">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg-pattern">
+        <div class="hero-gradient-1"></div>
+        <div class="hero-gradient-2"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-inner">
+          <h1 class="hero-title">
+            Questions
+            <span class="hero-title-gradient">Pathology Section with MRQ & SAQ</span>
+          </h1>
+          <p class="hero-description">
+            Sample Multiple Response Questions (MRQ) and Structured Written Answers (SAQ) for Pathology to familiarise yourself with the FranzCR question format and style.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-card"><p class="stat-card-text">MRQ Practice Questions</p></div>
+            <div class="stat-card"><p class="stat-card-text">SAQ Clinical Cases</p></div>
+            <div class="stat-card"><p class="stat-card-text">Detailed Explanations</p></div>
+            <div class="stat-card"><p class="stat-card-text">100% Free Access</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">MRQ</div>
+            <div class="stat-label">Practice Questions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">SAQ</div>
+            <div class="stat-label">Clinical Cases</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Pathology</div>
+            <div class="stat-label">Focused Section</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free Access</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Radiology MCQ Section -->
+    <section class="section section-gray" id="radiology-mcq">
+      <div class="container">
+        <h2 class="section-title text-center">Phase 2 Radiology MCQ</h2>
+        <p class="section-subtitle">Sample MRQ with detailed answers and explanations</p>
+
+        <MRQ
+          sectionId="mrq-sample"
+          title="Sample MRQ Question"
+          subtitle="Live practice question in the Multiple Response format with answer and explanation"
+        />
+      </div>
+    </section>
+
+    <!-- Pathology SAQ Section -->
+    <section class="section section-white" id="pathology-saq">
+      <div class="container">
+        <h2 class="section-title text-center">Phase 2 Pathology - Pathology MCQ and Pathology SAQ</h2>
+        <p class="section-subtitle">Clinical cases with structured marking criteria for pathology topics</p>
+
+        <PathologySAQTemplate
+          title="Pathology SAQ Template"
+          timeTarget="24 Marks (6 Marks Per Question)"
+        />
+      </div>
+    </section>
+
+    <!-- Case Reporting Section -->
+    <section class="section section-gray" id="case-reporting">
+      <div class="container">
+        <h2 class="section-title text-center">Case Reporting</h2>
+        <p class="section-subtitle">Short, medium, and long case practice for the FranzCR Case Reporting exam component</p>
+
+        <FranzcrShortCase
+          title="Case Reporting Short Case"
+        />
+
+        <FranzcrMediumCase
+          title="Case Reporting Medium Case"
+        />
+
+        <FranzcrLongCase
+          title="Case Reporting Long Case"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

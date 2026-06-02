@@ -1,0 +1,311 @@
+---
+export interface RubricItem {
+  observation: string;
+  mark: number;
+}
+
+export interface LongCaseCard {
+  questionNumber: number;
+  history: string;
+  imaging: string;
+  maxMarks: number; // 12
+  findings: RubricItem[];
+  diagnosis: string;
+  diagnosisMarks: number; // 2
+  differential: string;
+  differentialMarks: number; // e.g., 0 or 1
+  managementSteps: RubricItem[];
+}
+
+export interface Props {
+  title?: string;
+  cards?: LongCaseCard[];
+}
+
+const defaultCards: LongCaseCard[] = [
+  {
+    questionNumber: 1,
+    history: "[Insert concise 1-sentence clinical history]",
+    imaging: "[Insert multiple modalities, sequences, and slice/image counts]",
+    maxMarks: 12,
+    findings: [
+      { observation: "[Primary lesion/mass characteristics and exact location]", mark: 1 },
+      { observation: "[Vascular relationship, narrowing, or encasement]", mark: 0.5 },
+      { observation: "[Nodal staging: specific lymphadenopathy sites]", mark: 1 },
+      { observation: "[Secondary distant or structural abnormalities / bony remodelling]", mark: 1 },
+      { observation: "[Critical relevant negative 1]", mark: 0.5 },
+      { observation: "[Critical relevant negative 2]", mark: 0.5 },
+    ],
+    diagnosis: "[Insert primary/metastatic diagnosis]",
+    diagnosisMarks: 2,
+    differential: "[Insert relevant differential, or \"None\"]",
+    differentialMarks: 0,
+    managementSteps: [
+      { observation: "[Actionable step 1: e.g., Further systemic staging with PET-CT]", mark: 1 },
+      { observation: "[Actionable step 2: e.g., Image-guided tissue biopsy or urgent subspecialty referral]", mark: 1 },
+    ],
+  },
+];
+
+const { title = "Case Reporting Long Case", cards = defaultCards } = Astro.props;
+
+function sumMarks(items: RubricItem[]): number {
+  return items.reduce((sum, item) => sum + item.mark, 0);
+}
+---
+
+<main>
+  <h1>{title}</h1>
+
+  {cards.map((card) => {
+    const findingsTotal = sumMarks(card.findings);
+    const managementTotal = sumMarks(card.managementSteps);
+    const rubricTotal = findingsTotal + card.diagnosisMarks + card.differentialMarks + managementTotal;
+
+    return (
+      <div class="question-block longcase-card">
+        <h2>Question Number: {card.questionNumber}</h2>
+
+        <div class="card-field">
+          <h3>History:</h3>
+          <p>{card.history}</p>
+        </div>
+
+        <div class="card-field">
+          <h3>Imaging:</h3>
+          <p>{card.imaging}</p>
+        </div>
+
+        <div class="card-field">
+          <h3>Maximum Marks:</h3>
+          <p class="marks">{card.maxMarks}</p>
+        </div>
+
+        <textarea
+          class="longcase-answer-input"
+          rows="6"
+          placeholder="Type your answer here..."
+        ></textarea>
+
+        <div class="rubric-section">
+          <h3>Marking Rubric</h3>
+
+          {/* Findings */}
+          <div class="rubric-subsection">
+            <h4>Findings <span class="rubric-total">(Subtotal: {findingsTotal} marks)</span></h4>
+            {card.findings.map((item, idx) => (
+              <div class="rubric-row">
+                <span class="rubric-bullet">&#8226;</span>
+                <span class="rubric-finding">{item.observation}</span>
+                <span class="rubric-marks">({item.mark})</span>
+              </div>
+            ))}
+            <p class="rubric-note">
+              *Ensure the total for Findings balances perfectly with the remaining sections to equal exactly 12 marks total
+            </p>
+          </div>
+
+          {/* Likely Diagnosis */}
+          <div class="rubric-subsection">
+            <div class="rubric-row">
+              <span class="rubric-criteria">Likely Diagnosis:</span>
+              <span class="rubric-diagnosis">{card.diagnosis}</span>
+              <span class="rubric-marks">({card.diagnosisMarks})</span>
+            </div>
+          </div>
+
+          {/* Differential Diagnosis */}
+          <div class="rubric-subsection">
+            <div class="rubric-row">
+              <span class="rubric-criteria">Differential Diagnosis:</span>
+              <span class="rubric-diagnosis">{card.differential}</span>
+              <span class="rubric-marks">({card.differentialMarks})</span>
+            </div>
+          </div>
+
+          {/* Further Investigation and Management */}
+          <div class="rubric-subsection">
+            <h4>Further Investigation and Management <span class="rubric-total">(Subtotal: {managementTotal} marks)</span></h4>
+            {card.managementSteps.map((item, idx) => (
+              <div class="rubric-row">
+                <span class="rubric-bullet">&#8226;</span>
+                <span class="rubric-finding">{item.observation}</span>
+                <span class="rubric-marks">({item.mark})</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Total */}
+          <div class="rubric-total-row">
+            <span class="rubric-criteria">Total:</span>
+            <span class="rubric-marks">{rubricTotal} marks</span>
+          </div>
+        </div>
+      </div>
+    );
+  })}
+</main>
+
+<style>
+  .longcase-answer-input {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    resize: vertical;
+    box-sizing: border-box;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .longcase-answer-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+  }
+
+  .longcase-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .longcase-card h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+  }
+
+  .card-field {
+    margin-bottom: 12px;
+  }
+
+  .card-field h3 {
+    color: #34495e;
+    font-size: 1.05rem;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+
+  .card-field p {
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .card-field .marks {
+    font-weight: bold;
+    color: #e67e22;
+    font-size: 1.1rem;
+  }
+
+  .rubric-section {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f8fafc;
+  }
+
+  .rubric-section h3 {
+    color: #2c3e50;
+    font-size: 1.05rem;
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+
+  .rubric-subsection {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .rubric-subsection:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .rubric-subsection h4 {
+    color: #34495e;
+    font-size: 1rem;
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+
+  .rubric-total {
+    color: #888;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+
+  .rubric-note {
+    color: #888;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin: 6px 0 0;
+    padding: 0;
+  }
+
+  .rubric-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 4px 0;
+  }
+
+  .rubric-bullet {
+    color: #888;
+    min-width: 12px;
+  }
+
+  .rubric-finding {
+    color: #333;
+    flex: 1;
+  }
+
+  .rubric-criteria {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 180px;
+  }
+
+  .rubric-diagnosis {
+    color: #333;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .rubric-marks {
+    color: #e67e22;
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .rubric-total-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 2px solid #ddd;
+    margin-top: 8px;
+  }
+
+  .rubric-total-row .rubric-criteria {
+    min-width: auto;
+  }
+
+  .rubric-total-row .rubric-marks {
+    font-size: 1.05rem;
+  }
+</style>

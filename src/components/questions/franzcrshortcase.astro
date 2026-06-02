@@ -1,0 +1,174 @@
+---
+export interface ShortCaseCard {
+  questionNumber: number;
+  history: string;
+  imaging: string;
+  maxMarks: number; // 3
+  diagnosis: string; // the "Likely Diagnosis" answer
+}
+
+export interface Props {
+  title?: string;
+  cards?: ShortCaseCard[];
+}
+
+const defaultCards: ShortCaseCard[] = [
+  {
+    questionNumber: 1,
+    history: "[Insert brief 1-sentence history]",
+    imaging: "[Insert modality, view/projection, and image count]",
+    maxMarks: 3,
+    diagnosis: "[Insert exact pathognomonic diagnosis]",
+  },
+];
+
+const { title = "Case Reporting Short Case", cards = defaultCards } = Astro.props;
+---
+
+<main>
+  <h1>{title}</h1>
+
+  {cards.map((card) => (
+    <div class="question-block shortcase-card">
+      <h2>Question Number: {card.questionNumber}</h2>
+
+      <div class="card-field">
+        <h3>History:</h3>
+        <p>{card.history}</p>
+      </div>
+
+      <div class="card-field">
+        <h3>Imaging:</h3>
+        <p>{card.imaging}</p>
+      </div>
+
+      <div class="card-field">
+        <h3>Maximum Marks:</h3>
+        <p class="marks">{card.maxMarks}</p>
+      </div>
+
+      <textarea
+        class="shortcase-answer-input"
+        rows="3"
+        placeholder="Type your answer here..."
+      ></textarea>
+
+      <div class="rubric-section">
+        <h3>Marking Rubric</h3>
+        <div class="rubric-row">
+          <span class="rubric-criteria">Likely Diagnosis:</span>
+          <span class="rubric-diagnosis">{card.diagnosis}</span>
+          <span class="rubric-marks">({card.maxMarks})</span>
+        </div>
+      </div>
+    </div>
+  ))}
+</main>
+
+<style>
+  .shortcase-answer-input {
+    width: 100%;
+    min-height: 60px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    resize: vertical;
+    box-sizing: border-box;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .shortcase-answer-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+  }
+
+  .shortcase-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .shortcase-card h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+  }
+
+  .card-field {
+    margin-bottom: 12px;
+  }
+
+  .card-field h3 {
+    color: #34495e;
+    font-size: 1.05rem;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+
+  .card-field p {
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .card-field .marks {
+    font-weight: bold;
+    color: #e67e22;
+    font-size: 1.1rem;
+  }
+
+  .rubric-section {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f8fafc;
+  }
+
+  .rubric-section h3 {
+    color: #2c3e50;
+    font-size: 1.05rem;
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+
+  .rubric-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .rubric-row:last-child {
+    border-bottom: none;
+  }
+
+  .rubric-criteria {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 140px;
+  }
+
+  .rubric-diagnosis {
+    color: #333;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .rubric-marks {
+    color: #e67e22;
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+</style>
