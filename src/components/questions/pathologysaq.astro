@@ -89,86 +89,6 @@ const defaultCards: PathologySAQCard[] = [
       },
     ],
   },
-  {
-    questionNumber: 3,
-    history: "[Insert 1-2 sentence clinical history or a specific disease topic]",
-    maxMarks: 6,
-    subQuestions: [
-      {
-        number: 3.1,
-        text: "[Insert question text]",
-        mark: "Maximum of 3 marks",
-        rubric: [
-          { point: "[Point 1]", mark: 0.5 },
-          { point: "[Point 2]", mark: 0.5 },
-          { point: "[Point 3]", mark: 0.5 },
-          { point: "[Point 4]", mark: 0.5 },
-          { point: "[Point 5]", mark: 0.5 },
-          { point: "[Point 6]", mark: 0.5 },
-        ],
-      },
-      {
-        number: 3.2,
-        text: "[Insert question text]",
-        mark: "Maximum of 1.5 marks",
-        rubric: [
-          { point: "[Point 1]", mark: 0.5 },
-          { point: "[Point 2]", mark: 0.5 },
-          { point: "[Point 3]", mark: 0.5 },
-        ],
-      },
-      {
-        number: 3.3,
-        text: "[Insert question text]",
-        mark: "Maximum of 1.5 marks",
-        rubric: [
-          { point: "[Point 1]", mark: 0.5 },
-          { point: "[Point 2]", mark: 0.5 },
-          { point: "[Point 3]", mark: 0.5 },
-        ],
-      },
-    ],
-  },
-  {
-    questionNumber: 4,
-    history: "[Insert 1-2 sentence clinical history or a specific disease topic]",
-    maxMarks: 6,
-    subQuestions: [
-      {
-        number: 4.1,
-        text: "[Insert question text]",
-        mark: "Maximum of 2 marks",
-        rubric: [
-          { point: "[Point 1]", mark: 0.5 },
-          { point: "[Point 2]", mark: 0.5 },
-          { point: "[Point 3]", mark: 0.5 },
-          { point: "[Point 4]", mark: 0.5 },
-        ],
-      },
-      {
-        number: 4.2,
-        text: "[Insert question text]",
-        mark: "Maximum of 2 marks",
-        rubric: [
-          { point: "[Point 1]", mark: 0.5 },
-          { point: "[Point 2]", mark: 0.5 },
-          { point: "[Point 3]", mark: 0.5 },
-          { point: "[Point 4]", mark: 0.5 },
-        ],
-      },
-      {
-        number: 4.3,
-        text: "[Insert question text]",
-        mark: "Maximum of 2 marks",
-        rubric: [
-          { point: "[Point 1]", mark: 0.5 },
-          { point: "[Point 2]", mark: 0.5 },
-          { point: "[Point 3]", mark: 0.5 },
-          { point: "[Point 4]", mark: 0.5 },
-        ],
-      },
-    ],
-  },
 ];
 
 const { title = "Pathology SAQ", timeTarget = "24 Marks (6 Marks Per Question)", cards = defaultCards } = Astro.props;
@@ -183,7 +103,6 @@ const { title = "Pathology SAQ", timeTarget = "24 Marks (6 Marks Per Question)",
       <div class="history-section">
         <h3>History/Lead-in:</h3>
         <p>{card.history}</p>
-        <textarea class="saq-answer-input" rows="3" placeholder="Type your response to the history/lead-in here..."></textarea>
       </div>
       <p><strong>Maximum Marks:</strong> {card.maxMarks}</p>
 
