@@ -20,136 +20,74 @@ export interface shortcasesquestion {
 }
 
 export interface Props {
-  questions?: shortcasesquestion[];
-  sectionId?: string;
-  title?: string;
-  subtitle?: string;
+  questions: shortcasesquestion[];
 }
 
-const defaultQuestions: shortcasesquestion[] = [
-  {
-    number: 1,
-    stem: 'Concerning/In [Insert Topic or Core Statement Here]: / may include .jpg or .png images',
-    statements: [
-      { label: 'a', text: '[Statement 1]' },
-      { label: 'b', text: '[Statement 2]' },
-      { label: 'c', text: '[Statement 3]' },
-      { label: 'd', text: '[Statement 4]' },
-      { label: 'e', text: '[Statement 5]' },
-    ],
-    answers: [
-      { label: 'a', text: 'Incorrect', correct: false },
-      { label: 'b', text: 'Incorrect', correct: false },
-      { label: 'c', text: 'Correct Best Answer', correct: true },
-      { label: 'd', text: 'Incorrect', correct: false },
-      { label: 'e', text: 'Incorrect', correct: false },
-    ],
-    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
-    freeText: false,
-  },
-  {
-    number: 2,
-    stem: 'Concerning/In [Insert Another Topic or Core Statement Here]: / may include .jpg or .png images',
-    statements: [
-      { label: 'a', text: '[Statement A]' },
-      { label: 'b', text: '[Statement B]' },
-      { label: 'c', text: '[Statement C]' },
-      { label: 'd', text: '[Statement D]' },
-    ],
-    answers: [
-      { label: 'a', text: 'Incorrect', correct: false },
-      { label: 'b', text: 'Correct Best Answer', correct: true },
-      { label: 'c', text: 'Incorrect', correct: false },
-      { label: 'd', text: 'Incorrect', correct: false },
-    ],
-    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
-    freeText: false,
-  },
-  {
-    number: 3,
-    stem: 'Describe in your own words the key principles underlying [Insert Topic Here]:',
-    statements: [],
-    answers: [],
-    explanation: '[Insert a model answer or key points that should be covered in the free-text response.]',
-    freeText: true,
-  },
-];
-
-const { questions = defaultQuestions } = Astro.props;
-const sectionId = Astro.props.sectionId || 'shortcases-sample';
-const title = Astro.props.title || 'Sample Short Cases Questions';
-const subtitle = Astro.props.subtitle || 'Live practice questions in the Short Cases format with answers and explanations';
+const { questions } = Astro.props;
 ---
 
-<section class="section section-gray" id={sectionId}>
-  <div class="container">
-    <h2 class="section-title text-center">{title}</h2>
-    <p class="section-subtitle">{subtitle}</p>
+<div class="questions-grid">
+  {questions.map((q) => (
+    <div class="question-block">
+      <h3 class="question-heading">### Question {q.number}</h3>
 
-    <div class="questions-grid">
-      {questions.map((q) => (
-        <div class="question-block">
-          <h3 class="question-heading">### Question {q.number}</h3>
+      <p class="question-stem">
+        <strong>Stem:</strong> {q.stem}
+      </p>
 
-          <p class="question-stem">
-            <strong>Stem:</strong> {q.stem}
-          </p>
-
-          {q.freeText ? (
-            <div class="free-text-area" style="margin-top: 15px;">
-              <label for={`free-text-${q.number}`} style="display: block; margin-bottom: 8px; font-weight: bold;">
-                Your Answer:
-              </label>
-              <textarea
-                id={`free-text-${q.number}`}
-                rows="6"
-                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; font-size: 1rem; resize: vertical;"
-                placeholder="Type your answer here..."
-              ></textarea>
-            </div>
-          ) : (
-            <ol class="question-options" type="a">
-              {q.statements.map((stmt) => (
-                <li><input type="checkbox" name={`shortcases-question-${q.number}`} /> {stmt.text}</li>
-              ))}
-            </ol>
-          )}
-
-          <div class="answers-section">
-            {q.freeText ? (
-              <div
-                class="explanation-box"
-                style="margin-top: 15px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;"
-              >
-                <h5>Model Answer / Guidance:</h5>
-                <p>{q.explanation}</p>
-              </div>
-            ) : (
-              <>
-                <h4>Answer Options:</h4>
-                <ul class="answers-list">
-                  {q.answers.map((ans) => (
-                    <li>
-                      <strong>({ans.label})</strong> {ans.text}{' '}
-                      {ans.correct
-                        ? <span style="color: green; float: right;">&#10003;</span>
-                        : <span style="color: red; float: right;">&#10007;</span>}
-                    </li>
-                  ))}
-                </ul>
-
-                <div
-                  class="explanation-box"
-                  style="margin-top: 15px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;"
-                >
-                  <h5>Explanation:</h5>
-                  <p>{q.explanation}</p>
-                </div>
-              </>
-            )}
-          </div>
+      {q.freeText ? (
+        <div class="free-text-area" style="margin-top: 15px;">
+          <label for={`free-text-${q.number}`} style="display: block; margin-bottom: 8px; font-weight: bold;">
+            Your Answer:
+          </label>
+          <textarea
+            id={`free-text-${q.number}`}
+            rows="6"
+            style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; font-size: 1rem; resize: vertical;"
+            placeholder="Type your answer here..."
+          ></textarea>
         </div>
-      ))}
+      ) : (
+        <ol class="question-options" type="a">
+          {q.statements.map((stmt) => (
+            <li><input type="checkbox" name={`shortcases-question-${q.number}`} /> {stmt.text}</li>
+          ))}
+        </ol>
+      )}
+
+      <div class="answers-section">
+        {q.freeText ? (
+          <div
+            class="explanation-box"
+            style="margin-top: 15px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;"
+          >
+            <h5>Model Answer / Guidance:</h5>
+            <p>{q.explanation}</p>
+          </div>
+        ) : (
+          <>
+            <h4>Answer Options:</h4>
+            <ul class="answers-list">
+              {q.answers.map((ans) => (
+                <li>
+                  <strong>({ans.label})</strong> {ans.text}{' '}
+                  {ans.correct
+                    ? <span style="color: green; float: right;">&#10003;</span>
+                    : <span style="color: red; float: right;">&#10007;</span>}
+                </li>
+              ))}
+            </ul>
+
+            <div
+              class="explanation-box"
+              style="margin-top: 15px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;"
+            >
+              <h5>Explanation:</h5>
+              <p>{q.explanation}</p>
+            </div>
+          </>
+        )}
+      </div>
     </div>
-  </div>
-</section>
+  ))}
+</div>

@@ -3,6 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/navbar.astro';
 import Subnav from '../../components/subnav.astro';
 import MRQ from '../../components/questions/MRQ.astro';
+import SBA from '../../components/questions/SBA.astro';
+import Shortcases, { type shortcasesquestion } from '../../components/questions/shortcases.astro';
+import Corecases, { type corecasesquestion } from '../../components/questions/corecases.astro';
 import Footer from '../../components/footer.astro';
 ---
 
@@ -64,11 +67,127 @@ import Footer from '../../components/footer.astro';
       </div>
     </section>
 
-    <MRQ
-      sectionId="mrq-sample"
-      title="Sample MRQ Question"
-      subtitle="Live practice question in the Multiple Response format with answer and explanation"
-    />
+    <!-- Written Exam Section -->
+    <section class="section section-gray" id="written-exam">
+      <div class="container">
+        <h2 class="section-title text-center">Written Exam</h2>
+        <p class="section-subtitle">Sample Multiple Response (MRQ) and Short Cases questions with detailed answers and explanations</p>
+
+        <MRQ
+          sectionId="mrq-sample"
+          title="Sample MRQ Question"
+          subtitle="Live practice question in the Multiple Response format with answer and explanation"
+        />
+
+        <h3 class="section-title" style="margin-top: 2rem;">Sample Short Case Question</h3>
+
+        <Shortcases questions={[
+  {
+    number: 1,
+    stem: 'Concerning/In [Insert Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement 1]' },
+      { label: 'b', text: '[Statement 2]' },
+      { label: 'c', text: '[Statement 3]' },
+      { label: 'd', text: '[Statement 4]' },
+      { label: 'e', text: '[Statement 5]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Incorrect', correct: false },
+      { label: 'c', text: 'Correct Best Answer', correct: true },
+      { label: 'd', text: 'Incorrect', correct: false },
+      { label: 'e', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 2,
+    stem: 'Concerning/In [Insert Another Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement A]' },
+      { label: 'b', text: '[Statement B]' },
+      { label: 'c', text: '[Statement C]' },
+      { label: 'd', text: '[Statement D]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Correct Best Answer', correct: true },
+      { label: 'c', text: 'Incorrect', correct: false },
+      { label: 'd', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 3,
+    stem: 'Describe in your own words the key principles underlying [Insert Topic Here]:',
+    statements: [],
+    answers: [],
+    explanation: '[Insert a model answer or key points that should be covered in the free-text response.]',
+    freeText: true,
+  },
+]} />
+      </div>
+    </section>
+
+    <!-- Core Exam Section -->
+    <section class="section section-white" id="core-exam">
+      <div class="container">
+        <h2 class="section-title text-center">Core Exam</h2>
+        <p class="section-subtitle">Sample Core Cases questions with detailed clinical reasoning and explanations</p>
+
+        <Corecases questions={[
+  {
+    number: 1,
+    stem: 'Concerning/In [Insert Core Case Topic or Core Statement Here]: may have DICOM or .jpg/.png image references',
+    statements: [
+      { label: 'a', text: '[Statement 1]' },
+      { label: 'b', text: '[Statement 2]' },
+      { label: 'c', text: '[Statement 3]' },
+      { label: 'd', text: '[Statement 4]' },
+      { label: 'e', text: '[Statement 5]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Incorrect', correct: false },
+      { label: 'c', text: 'Correct Best Answer', correct: true },
+      { label: 'd', text: 'Incorrect', correct: false },
+      { label: 'e', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 2,
+    stem: 'Concerning/In [Insert Another Core Case Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement A]' },
+      { label: 'b', text: '[Statement B]' },
+      { label: 'c', text: '[Statement C]' },
+      { label: 'd', text: '[Statement D]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Correct Best Answer', correct: true },
+      { label: 'c', text: 'Incorrect', correct: false },
+      { label: 'd', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 3,
+    stem: 'Describe in your own words the key principles underlying [Insert Topic Here]:',
+    statements: [],
+    answers: [],
+    explanation: '[Insert a model answer or key points that should be covered in the free-text response.]',
+    freeText: true,
+  },
+]} />
+      </div>
+    </section>
   </main>
 
   <Footer />

@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/navbar.astro';
 import Subnav from '../../components/subnav.astro';
+import shortcases, { type shortcasesquestion } from '../../components/questions/shortcases.astro';
+import corecases, { type corecasesquestion } from '../../components/questions/corecases.astro';
 import Footer from '../../components/footer.astro';
 ---
 
@@ -224,6 +226,117 @@ import Footer from '../../components/footer.astro';
       </div>
     </section>
 
+    <!-- Short Cases Sample Questions -->
+    <section class="section section-gray" id="shortcases-sample">
+      <div class="container">
+        <h2 class="section-title text-center">Short Cases Sample Questions</h2>
+        <p class="section-subtitle">Live practice short case questions in the Short Cases format with answers and explanations</p>
+        <shortcases questions={[
+  {
+    number: 1,
+    stem: 'Concerning/In [Insert Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement 1]' },
+      { label: 'b', text: '[Statement 2]' },
+      { label: 'c', text: '[Statement 3]' },
+      { label: 'd', text: '[Statement 4]' },
+      { label: 'e', text: '[Statement 5]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Incorrect', correct: false },
+      { label: 'c', text: 'Correct Best Answer', correct: true },
+      { label: 'd', text: 'Incorrect', correct: false },
+      { label: 'e', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 2,
+    stem: 'Concerning/In [Insert Another Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement A]' },
+      { label: 'b', text: '[Statement B]' },
+      { label: 'c', text: '[Statement C]' },
+      { label: 'd', text: '[Statement D]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Correct Best Answer', correct: true },
+      { label: 'c', text: 'Incorrect', correct: false },
+      { label: 'd', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 3,
+    stem: 'Describe in your own words the key principles underlying [Insert Topic Here]:',
+    statements: [],
+    answers: [],
+    explanation: '[Insert a model answer or key points that should be covered in the free-text response.]',
+    freeText: true,
+  },
+]} />
+      </div>
+    </section>
+
+    <!-- CORE Cases Sample Questions -->
+    <section class="section section-white" id="corecases-sample">
+      <div class="container">
+        <h2 class="section-title text-center">CORE Cases Sample Questions</h2>
+        <p class="section-subtitle">Sample Core Cases Questions with detailed clinical reasoning</p>
+        <corecases questions={[
+  {
+    number: 1,
+    stem: 'Concerning/In [Insert Core Case Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement 1]' },
+      { label: 'b', text: '[Statement 2]' },
+      { label: 'c', text: '[Statement 3]' },
+      { label: 'd', text: '[Statement 4]' },
+      { label: 'e', text: '[Statement 5]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Incorrect', correct: false },
+      { label: 'c', text: 'Correct Best Answer', correct: true },
+      { label: 'd', text: 'Incorrect', correct: false },
+      { label: 'e', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 2,
+    stem: 'Concerning/In [Insert Another Core Case Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement A]' },
+      { label: 'b', text: '[Statement B]' },
+      { label: 'c', text: '[Statement C]' },
+      { label: 'd', text: '[Statement D]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Correct Best Answer', correct: true },
+      { label: 'c', text: 'Incorrect', correct: false },
+      { label: 'd', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 3,
+    stem: 'Describe in your own words the key principles underlying [Insert Topic Here]:',
+    statements: [],
+    answers: [],
+    explanation: '[Insert a model answer or key points that should be covered in the free-text response.]',
+    freeText: true,
+  },
+]} />
+      </div>
+    </section>
   </main>
 
   <Footer />
