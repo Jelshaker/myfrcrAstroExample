@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/navbar.astro';
+import Subnav from '../../components/subnav.astro';
+import MRQ from '../../components/questions/MRQ.astro';
+import Footer from '../../components/footer.astro';
+---
+
+<Layout title="EDiR Questions – myEDiR - EDiR Exam - MyFRCR.com" theme="edir">
+  <Navbar />
+  <Subnav links={[
+    { label: 'MCQ', href: '/edir/edir_mcq' },
+    { label: 'Short Cases', href: '/edir/edir_shortcases' },
+    { label: 'CORE', href: '/edir/edir_core' },
+  ]} />
+
+  <main class="has-subnav">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg-pattern">
+        <div class="hero-gradient-1"></div>
+        <div class="hero-gradient-2"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-inner">
+          <h1 class="hero-title">
+            Questions
+            <span class="hero-title-gradient">Sample Questions & Practice Resources</span>
+          </h1>
+          <p class="hero-description">
+            Sample Multiple Response Questions (MRQ) to familiarise yourself with the EDiR MCQ question format and style.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-card"><p class="stat-card-text">MRQ Practice Questions</p></div>
+            <div class="stat-card"><p class="stat-card-text">Detailed Explanations</p></div>
+            <div class="stat-card"><p class="stat-card-text">Exam-Format Style</p></div>
+            <div class="stat-card"><p class="stat-card-text">100% Free Access</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">MRQ</div>
+            <div class="stat-label">Practice Questions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Detailed</div>
+            <div class="stat-label">Explanations</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Exam</div>
+            <div class="stat-label">Format Style</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free Access</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <MRQ
+      sectionId="mrq-sample"
+      title="Sample MRQ Question"
+      subtitle="Live practice question in the Multiple Response format with answer and explanation"
+    />
+  </main>
+
+  <Footer />
+</Layout>

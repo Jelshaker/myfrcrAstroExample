@@ -67,16 +67,26 @@ import Footer from '../../components/footer.astro';
     </section>
 
 
-    <PhysicsCard
-      resource={{
-        title: 'FRCR Physics Specimen Questions',
-        description: 'Official RCR specimen questions for the FRCR Part 1 CR1 Physics module. Practice with Single Best Answer format questions covering key physics principles.',
-        href: '#',
-        badge: 'RCR Official',
-      }}
-    />
+    <section class="section" id="frcr-physics">
+      <div class="container">
+        <h2 class="section-title text-center">FRCR Physics</h2>
+        <PhysicsCard
+          resource={{
+            title: 'FRCR Physics Specimen Questions',
+            description: 'Official RCR specimen questions for the FRCR Part 1 CR1 Physics module. Practice with Single Best Answer format questions covering key physics principles.',
+            href: '#',
+            badge: 'RCR Official',
+          }}
+        />
+      </div>
+    </section>
 
-    <SBA />
+    <section class="section" id="frcr-2a">
+      <div class="container">
+        <h2 class="section-title text-center">FRCR 2A</h2>
+        <SBA />
+      </div>
+    </section>
   </main>
 
   
