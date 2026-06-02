@@ -730,6 +730,61 @@ button {
   color: rgba(255, 255, 255, 0.75);
 }
 
+/* --- RCPSc Section Styles --- */
+.section-rcpsc-mcq {
+  background: linear-gradient(135deg, #1a0a0a 0%, #2d1414 50%, #3d1818 100%);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-rcpsc-mcq::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 40rem;
+  height: 40rem;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.section-rcpsc-mcq > .container > .exam-header > .section-title {
+  color: var(--color-white);
+}
+
+.section-rcpsc-mcq > .container > .exam-header > .section-subtitle {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.section-rcpsc-casereporting {
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a142d 50%, #2d1414 100%);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-rcpsc-casereporting::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 35rem;
+  height: 35rem;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.section-rcpsc-casereporting > .container > .exam-header > .section-title {
+  color: var(--color-white);
+}
+
+.section-rcpsc-casereporting > .container > .exam-header > .section-subtitle {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 /* --- EDiR Section Styles --- */
 .section-edir-written {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1e3a5f 100%);
@@ -775,6 +830,113 @@ button {
   background: radial-gradient(circle, rgba(234, 179, 8, 0.06) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
+}
+
+/* --- Reference Links (official exam PDF downloads) --- */
+.reference-links {
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.reference-links p {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.reference-links a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+/* Centered variant on light background (exam format section) */
+.reference-links-centered {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 2rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-md);
+}
+
+.reference-links-centered p:first-child {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+
+.reference-links-centered a {
+  background: linear-gradient(135deg, var(--color-blue-600), #1d4ed8);
+  color: var(--color-white);
+  padding: 0.75rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.reference-links-centered a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
+}
+
+/* On dark backgrounds (MCQ section) */
+.section-rcpsc-mcq .reference-links {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.section-rcpsc-mcq .reference-links p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section-rcpsc-mcq .reference-links a {
+  background: var(--color-blue-600);
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.section-rcpsc-mcq .reference-links a:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* On light backgrounds (Case Reporting section) */
+.section-rcpsc-casereporting .reference-links {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.section-rcpsc-casereporting .reference-links p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section-rcpsc-casereporting .reference-links a {
+  background: rgba(74, 222, 128, 0.2);
+  color: #86efac;
+  border: 1px solid rgba(74, 222, 128, 0.4);
+}
+
+.section-rcpsc-casereporting .reference-links a:hover {
+  background: rgba(74, 222, 128, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(74, 222, 128, 0.3);
 }
 
 /* --- Exam Header (badge + title + subtitle wrapper) --- */
@@ -826,6 +988,21 @@ button {
   background: rgba(74, 222, 128, 0.25);
   color: #86efac;
   border: 1px solid rgba(74, 222, 128, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+/* RCPSc badges */
+.exam-badge-rcpsc-mcq {
+  background: rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.exam-badge-rcpsc-cr {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.35);
   backdrop-filter: blur(4px);
 }
 

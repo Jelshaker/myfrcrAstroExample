@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/navbar.astro';
+import Subnav from '../../components/subnav.astro';
+import Footer from '../../components/footer.astro';
+import SBA from '../../components/questions/SBA.astro';
+import FranzcrShortCase from '../../components/questions/franzcrshortcase.astro';
+import FranzcrMediumCase from '../../components/questions/franzcrmediumcase.astro';
+---
+
+<Layout title="FRCPC Questions – RCPSc Exam - MyFRCR.com" theme="rcpsc">
+  <Navbar />
+  <Subnav links={[
+    { label: 'MCQ', href: '/rcpsc/rcpsc_mcq' },
+    { label: 'SAQ', href: '/rcpsc/rcpsc_sba' },
+  ]} />
+
+  <main class="has-subnav">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg-pattern">
+        <div class="hero-gradient-1"></div>
+        <div class="hero-gradient-2"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-inner">
+          <h1 class="hero-title">
+            Questions
+            <span class="hero-title-gradient">Sample Questions & Practice Resources</span>
+          </h1>
+          <p class="hero-description">
+            Sample Single Best Answer (SBA) and Case Reporting questions to familiarise yourself with the FRCPC (RCPSc) exam format and style.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-card"><p class="stat-card-text">SBA Practice Questions</p></div>
+            <div class="stat-card"><p class="stat-card-text">Case Reporting Practice</p></div>
+            <div class="stat-card"><p class="stat-card-text">Detailed Explanations</p></div>
+            <div class="stat-card"><p class="stat-card-text">100% Free Access</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">SBA</div>
+            <div class="stat-label">Practice Questions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Short Case</div>
+            <div class="stat-label">Case Reporting</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Medium Case</div>
+            <div class="stat-label">Case Reporting</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free Access</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXAM FORMAT REFERENCE ==================== -->
+    <section class="section section-gray">
+      <div class="container">
+        <div class="reference-links reference-links-centered">
+          <p><strong>RCPSc Diagnostic Radiology Exam Format</strong></p>
+          <p style="margin-top: 0.5rem; font-size: 0.95rem; color: var(--color-gray-600);">View the official Royal College exam format, blueprint, and sample materials for Diagnostic Radiology.</p>
+          <a href="https://www.royalcollege.ca/en/eligibility-and-exams/exam-formats/diagnostic-radiology-exam-format.html" target="_blank" rel="noopener noreferrer">Visit the RCPSc Diagnostic Radiology Exam Format Page</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MCQ EXAM ==================== -->
+    <section class="section section-rcpsc-mcq" id="mcq-exam">
+      <div class="container">
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-rcpsc-mcq">Paper 1: MCQ</span>
+          <h2 class="section-title text-center">Paper 1: MCQ - Single Best Answer</h2>
+          <p class="section-subtitle">Sample SBA questions with detailed answers and explanations</p>
+        </div>
+        <div class="reference-links">
+          <p><strong>Official RCPSc Reference:</strong> <a href="https://www.royalcollege.ca/content/dam/documents/ibd/diagnostic-radiology/2025-diagnostic-radiology-sample-written-mcq-exam-e.pdf" target="_blank" rel="noopener noreferrer">Download the RCPSc Diagnostic Radiology Sample Written MCQ Exam (PDF)</a></p>
+        </div>
+        <SBA
+          sectionId="sba-sample"
+          title="Sample SBA Question"
+          subtitle="Live practice question in the Single Best Answer format with answer and explanation"
+        />
+      </div>
+    </section>
+
+    <!-- Exam Divider -->
+    <div class="exam-divider">
+      <div class="exam-divider-line"></div>
+      <span class="exam-divider-label">Next Paper</span>
+      <div class="exam-divider-line"></div>
+    </div>
+
+    <!-- ==================== CASE REPORTING ==================== -->
+    <section class="section section-rcpsc-casereporting" id="case-reporting">
+      <div class="container">
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-rcpsc-cr">Paper 2: SAQ</span>
+          <h2 class="section-title text-center">Paper 2: Short Answer Questions</h2>
+          <p class="section-subtitle">Short and medium case practice for the FRCPC Case Reporting exam component</p>
+        </div>
+        <div class="reference-links">
+          <p><strong>Official RCPSc Reference:</strong> <a href="https://www.royalcollege.ca/content/dam/documents/ibd/diagnostic-radiology/2025-diagnostic-radiology-sample-written-saq-exam-e.pdf" target="_blank" rel="noopener noreferrer">Download the RCPSc Diagnostic Radiology Sample Written SAQ Exam (PDF)</a></p>
+        </div>
+        <FranzcrShortCase
+          title="Case Reporting Short Case"
+        />
+
+        <FranzcrMediumCase
+          title="Case Reporting Medium Case"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
