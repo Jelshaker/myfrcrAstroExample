@@ -1,41 +1,33 @@
 ---
-export interface SBAStatement {
+export interface MRQStatement {
   label: string; // a, b, c, d, e
   text: string;
 }
 
-export interface SBAAnswer {
+export interface MRQAnswer {
   label: string; // a, b, c, d, e
   text: string; // e.g. "Correct Best Answer" or "Incorrect"
   correct: boolean;
 }
 
-export interface SBAQuestion {
+export interface MRQQuestion {
   number: number;
   stem: string;
-  statements: SBAStatement[];
-  answers: SBAAnswer[];
+  statements: MRQStatement[];
+  answers: MRQAnswer[];
   explanation: string;
 }
 
-export interface PhysicsResource {
-  title: string;
-  description: string;
-  href: string;
-  badge?: string;
-}
-
 export interface Props {
-  question?: SBAQuestion;
-  resource?: PhysicsResource;
+  question?: MRQQuestion;
   sectionId?: string;
   title?: string;
   subtitle?: string;
 }
 
-const defaultQuestion: SBAQuestion = {
+const defaultQuestion: MRQQuestion = {
   number: 1,
-  stem: 'Concerning/In [Insert Topic or Core Statement Here]:',
+  stem: 'Concerning/In [Insert Topic or Core Statement Here]: / may include .jpg or .png images',
   statements: [
     { label: 'a', text: '[Statement 1]' },
     { label: 'b', text: '[Statement 2]' },
@@ -44,20 +36,20 @@ const defaultQuestion: SBAQuestion = {
     { label: 'e', text: '[Statement 5]' },
   ],
   answers: [
-    { label: 'a', text: 'True — [Brief explanation of the physics principle or rule]', correct: true },
-    { label: 'b', text: 'False — [Brief explanation]', correct: false },
-    { label: 'c', text: 'False — [Brief explanation]', correct: false },
-    { label: 'd', text: 'True — [Brief explanation]', correct: true },
-    { label: 'e', text: 'False — [Brief explanation]', correct: false },
+    { label: 'a', text: 'Incorrect', correct: false },
+    { label: 'b', text: 'Incorrect', correct: false },
+    { label: 'c', text: 'Correct Best Answer', correct: true },
+    { label: 'd', text: 'Incorrect', correct: false },
+    { label: 'e', text: 'Incorrect', correct: false },
   ],
   explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
 };
 
-const { question = defaultQuestion, resource } = Astro.props;
+const { question = defaultQuestion } = Astro.props;
 const { number, stem, statements, answers, explanation } = question;
-const sectionId = Astro.props.sectionId || 'physics-sample';
-const title = Astro.props.title || 'Sample Physics Question';
-const subtitle = Astro.props.subtitle || 'Live practice question in the Single Best Answer format with answer and explanation';
+const sectionId = Astro.props.sectionId || 'mrq-sample';
+const title = Astro.props.title || 'Sample MRQ Question';
+const subtitle = Astro.props.subtitle || 'Live practice question in the Multiple Response format with answer and explanation';
 ---
 
 <section class="section section-gray" id={sectionId}>
@@ -75,7 +67,7 @@ const subtitle = Astro.props.subtitle || 'Live practice question in the Single B
 
         <ol class="question-options" type="a">
           {statements.map((stmt) => (
-            <li><input type="checkbox" name="physics-question" /> {stmt.text}</li>
+            <li><input type="checkbox" name="mrq-question" /> {stmt.text}</li>
           ))}
         </ol>
 
@@ -92,6 +84,13 @@ const subtitle = Astro.props.subtitle || 'Live practice question in the Single B
             ))}
           </ul>
 
+          <div
+            class="explanation-box"
+            style="margin-top: 15px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;"
+          >
+            <h5>Explanation:</h5>
+            <p>{explanation}</p>
+          </div>
         </div>
       </div>
     </div>

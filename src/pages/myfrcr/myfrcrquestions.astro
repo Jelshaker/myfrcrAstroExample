@@ -26,7 +26,7 @@ import Footer from '../../components/footer.astro';
       <div class="hero-content">
         <div class="hero-inner">
           <h1 class="hero-title">
-            FRCR Questions
+            Questions
             <span class="hero-title-gradient">Physics & Specimen Resources</span>
           </h1>
           <p class="hero-description">
@@ -66,56 +66,17 @@ import Footer from '../../components/footer.astro';
       </div>
     </section>
 
-    <!-- Physics Card Section -->
-    <section class="section section-white" id="physics-resources">
-      <div class="container">
-        <h2 class="section-title text-center">Physics Specimen Questions</h2>
-        <p class="section-subtitle">Official RCR FRCR Part 1 CR1 Physics Module specimen questions</p>
 
-        <div class="cards-grid">
-          <PhysicsCard
-            resource={{
-              title: 'FRCR Part 1 Physics',
-              description: 'Official RCR specimen questions for the FRCR Part 1 CR1 Physics module. These questions cover the core physics principles relevant to clinical radiology, including radiation physics, imaging equipment, radiation safety, and quality assurance.',
-              href: 'https://www.rcr.ac.uk/exams-training/rcr-exams/clinical-radiology-exams/frcr-part-1-radiology-cr1/frcr-part-1-radiology-cr1-specimen-questions-physics-module/',
-              badge: 'Official RCR Resource',
-            }}
-          />
-        </div>
-      </div>
-    </section>
+    <PhysicsCard
+      resource={{
+        title: 'FRCR Physics Specimen Questions',
+        description: 'Official RCR specimen questions for the FRCR Part 1 CR1 Physics module. Practice with Single Best Answer format questions covering key physics principles.',
+        href: '#',
+        badge: 'RCR Official',
+      }}
+    />
 
-    <!-- SBA Sample Question Section -->
-    <section class="section section-gray" id="sba-sample">
-      <div class="container">
-        <h2 class="section-title text-center">Sample SBA Question</h2>
-        <p class="section-subtitle">Live practice question in the Single Best Answer format with answer and explanation</p>
-
-        <div class="questions-grid">
-          <SBA
-            question={{
-              number: 1,
-              stem: 'Concerning/In [Insert Topic or Core Statement Here]:',
-              statements: [
-                { label: 'a', text: '[Statement 1]' },
-                { label: 'b', text: '[Statement 2]' },
-                { label: 'c', text: '[Statement 3]' },
-                { label: 'd', text: '[Statement 4]' },
-                { label: 'e', text: '[Statement 5]' },
-              ],
-              answers: [
-                { label: 'a', text: 'Incorrect', correct: false },
-                { label: 'b', text: 'Incorrect', correct: false },
-                { label: 'c', text: 'Correct Best Answer', correct: true },
-                { label: 'd', text: 'Incorrect', correct: false },
-                { label: 'e', text: 'Incorrect', correct: false },
-              ],
-              explanation: '[Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
-            }}
-          />
-        </div>
-      </div>
-    </section>
+    <SBA />
   </main>
 
   

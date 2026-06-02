@@ -19,40 +19,80 @@ export interface SBAQuestion {
 }
 
 export interface Props {
-  question: SBAQuestion;
+  question?: SBAQuestion;
+  sectionId?: string;
+  title?: string;
+  subtitle?: string;
 }
 
-const { question } = Astro.props;
+const defaultQuestion: SBAQuestion = {
+  number: 1,
+  stem: 'Concerning/In [Insert Topic or Core Statement Here]: / may include .jpg or .png image references',
+  statements: [
+    { label: 'a', text: '[Statement 1]' },
+    { label: 'b', text: '[Statement 2]' },
+    { label: 'c', text: '[Statement 3]' },
+    { label: 'd', text: '[Statement 4]' },
+    { label: 'e', text: '[Statement 5]' },
+  ],
+  answers: [
+    { label: 'a', text: 'Incorrect', correct: false },
+    { label: 'b', text: 'Incorrect', correct: false },
+    { label: 'c', text: 'Correct Best Answer', correct: true },
+    { label: 'd', text: 'Incorrect', correct: false },
+    { label: 'e', text: 'Incorrect', correct: false },
+  ],
+  explanation: '[Insert the detailed physics principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+};
+
+const { question = defaultQuestion } = Astro.props;
 const { number, stem, statements, answers, explanation } = question;
+const sectionId = Astro.props.sectionId || 'sba-sample';
+const title = Astro.props.title || 'Sample SBA Question';
+const subtitle = Astro.props.subtitle || 'Live practice question in the Single Best Answer format with answer and explanation';
 ---
 
-<div class="question-block">
-  <h3 class="question-heading">### Question {number}</h3>
+<section class="section section-gray" id={sectionId}>
+  <div class="container">
+    <h2 class="section-title text-center">{title}</h2>
+    <p class="section-subtitle">{subtitle}</p>
 
-  <p class="question-stem">
-    <strong>Stem:</strong> {stem}
-  </p>
+    <div class="questions-grid">
+      <div class="question-block">
+        <h3 class="question-heading">### Question {number}</h3>
 
-  <ol class="question-options" type="a">
-    {statements.map((stmt) => (
-      <li>{stmt.text}</li>
-    ))}
-  </ol>
+        <p class="question-stem">
+          <strong>Stem:</strong> {stem}
+        </p>
 
-  <div class="answers-section">
-    <h4>Answer Options:</h4>
-    <ul class="answers-list">
-      {answers.map((ans) => (
-        <li><strong>({ans.label})</strong> {ans.text} {ans.correct ? <span style="color: green; float: right;">&#10003;</span> : <span style="color: red; float: right;">&#10007;</span>}</li>
-      ))}
-    </ul>
+        <ol class="question-options" type="a">
+          {statements.map((stmt) => (
+            <li><input type="radio" name="sba-question" /> {stmt.text}</li>
+          ))}
+        </ol>
 
-    <div
-      class="explanation-box"
-      style="margin-top: 15px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;"
-    >
-      <h5>Explanation:</h5>
-      <p>{explanation}</p>
+        <div class="answers-section">
+          <h4>Answer Options:</h4>
+          <ul class="answers-list">
+            {answers.map((ans) => (
+              <li>
+                <strong>({ans.label})</strong> {ans.text}{' '}
+                {ans.correct
+                  ? <span style="color: green; float: right;">&#10003;</span>
+                  : <span style="color: red; float: right;">&#10007;</span>}
+              </li>
+            ))}
+          </ul>
+
+          <div
+            class="explanation-box"
+            style="margin-top: 15px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;"
+          >
+            <h5>Explanation:</h5>
+            <p>{explanation}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
