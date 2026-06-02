@@ -1,0 +1,58 @@
+---
+export interface FRCRShortCaseCard {
+  caseNumber: number;
+  history: string;
+  imaging: string;
+  maxMarks: number; // 5
+}
+
+export interface Props {
+  title?: string;
+  cards?: FRCRShortCaseCard[];
+}
+
+const defaultCards: FRCRShortCaseCard[] = [
+  {
+    caseNumber: 1,
+    history: "[Insert brief 1-sentence clinical history]",
+    imaging: "[Insert plain radiograph metadata – e.g. modality, view/projection, image count]",
+    maxMarks: 5,
+  },
+];
+
+const { title = "FRCR Part 2B Short Case", cards = defaultCards } = Astro.props;
+---
+
+<main>
+  <h1>{title}</h1>
+
+  {cards.map((card) => (
+    <div class="question-block frcr-short-case-card">
+      <h2>Case Number: {card.caseNumber}</h2>
+
+      <div class="card-field">
+        <h3>Clinical History:</h3>
+        <p>{card.history}</p>
+      </div>
+
+      <div class="card-field">
+        <h3>Imaging Provided:</h3>
+        <p>{card.imaging}</p>
+      </div>
+
+      <div class="card-field">
+        <h3>Maximum Marks:</h3>
+        <p class="marks">{card.maxMarks}</p>
+      </div>
+
+      <div class="candidate-response-section">
+        <h3>1. Observations / Findings</h3>
+        <textarea
+          class="frcr-short-answer-input"
+          rows="6"
+          placeholder="Free-text input for positive findings, review areas, and relevant negatives..."
+        ></textarea>
+      </div>
+    </div>
+  ))}
+</main>

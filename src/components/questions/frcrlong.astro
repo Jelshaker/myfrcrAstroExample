@@ -1,0 +1,76 @@
+---
+export interface FRCRLongCaseCard {
+  caseNumber: number;
+  history: string;
+  imaging: string;
+  maxMarks: number; // 5
+}
+
+export interface Props {
+  title?: string;
+  cards?: FRCRLongCaseCard[];
+}
+
+const defaultCards: FRCRLongCaseCard[] = [
+  {
+    caseNumber: 1,
+    history: "[Insert concise 1-2 sentence clinical history]",
+    imaging: "[Insert multi-series cross-sectional or multi-modality metadata]",
+    maxMarks: 5,
+  },
+];
+
+const { title = "FRCR Part 2B Long Case", cards = defaultCards } = Astro.props;
+---
+
+<main>
+  <h1>{title}</h1>
+
+  {cards.map((card) => (
+    <div class="question-block frcr-long-case-card">
+      <h2>Case Number: {card.caseNumber}</h2>
+
+      <div class="card-field">
+        <h3>Clinical History:</h3>
+        <p>{card.history}</p>
+      </div>
+
+      <div class="card-field">
+        <h3>Imaging Provided:</h3>
+        <p>{card.imaging}</p>
+      </div>
+
+      <div class="card-field">
+        <h3>Maximum Marks:</h3>
+        <p class="marks">{card.maxMarks}</p>
+      </div>
+
+      <div class="candidate-response-section">
+        <h3>1. Observations / Findings</h3>
+        <textarea
+          class="frcr-long-answer-input"
+          rows="6"
+          placeholder="Free-text input for detailed primary lesion observations, nodal/metastatic staging, secondary complications, and critical relevant negatives"
+        ></textarea>
+      </div>
+
+      <div class="candidate-response-section">
+        <h3>2. Main / Principal Diagnosis</h3>
+        <textarea
+          class="frcr-long-answer-input"
+          rows="3"
+          placeholder="Free-text input for the definitive primary diagnosis, including staging or structural classification if applicable"
+        ></textarea>
+      </div>
+
+      <div class="candidate-response-section">
+        <h3>3. Management / Next Steps</h3>
+        <textarea
+          class="frcr-long-answer-input"
+          rows="4"
+          placeholder="Free-text input for actionable clinical pathways, multidisciplinary team (MDT) referrals, further specific imaging/biopsy, or immediate safety notifications"
+        ></textarea>
+      </div>
+    </div>
+  ))}
+</main>
