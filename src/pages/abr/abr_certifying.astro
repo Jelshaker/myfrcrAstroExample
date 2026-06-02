@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/navbar.astro';
 import Subnav from '../../components/subnav.astro';
 import Footer from '../../components/footer.astro';
+import FRCRLong from '../../components/questions/frcrlong.astro';
 ---
 
 <Layout title="Certifying Exam – ABR Core Exam - MyFRCR.com" theme="abr">
@@ -174,6 +175,21 @@ import Footer from '../../components/footer.astro';
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Sample Long Case Practice Section -->
+    <section class="section section-gray" id="long-case-practice">
+      <div class="container">
+        <div class="exam-header">
+          <h2 class="section-title text-center">Sample Long Case Practice</h2>
+          <p class="section-subtitle">
+            Practice with FRCR-style long case questions for advanced certifying exam preparation
+          </p>
+        </div>
+        <FRCRLong
+          title="FRCR Part 2B Long Case Practice"
+        />
       </div>
     </section>
 
