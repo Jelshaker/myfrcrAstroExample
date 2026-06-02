@@ -1,0 +1,228 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/navbar.astro';
+import Subnav from '../../components/subnav.astro';
+import MRQ from '../../components/questions/MRQ.astro';
+import Shortcases, { type shortcasesquestion } from '../../components/questions/shortcases.astro';
+import Corecases, { type corecasesquestion } from '../../components/questions/corecases.astro';
+import Footer from '../../components/footer.astro';
+---
+
+<Layout title="EDiR Diploma Questions – myEDiR – MyFRCR.com" theme="edirdiplomas">
+  <Navbar />
+  <Subnav links={[
+    { label: 'MCQ', href: '/edir_diplomas/edirdiplomaquestions#mcq-section' },
+    { label: 'Short Cases', href: '/edir_diplomas/edirdiplomaquestions#short-cases-section' },
+    { label: 'Core Cases', href: '/edir_diplomas/edirdiplomaquestions#core-cases-section' },
+  ]} />
+
+  <main class="has-subnav">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg-pattern">
+        <div class="hero-gradient-1"></div>
+        <div class="hero-gradient-2"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-inner">
+          <h1 class="hero-title">
+            Questions
+            <span class="hero-title-gradient">Sample Questions & Practice Resources</span>
+          </h1>
+          <p class="hero-description">
+            Sample MCQ, Short Cases, and Core Cases questions to familiarise yourself with the EDiR Diploma exam question format and style across all subspecialties.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-card"><p class="stat-card-text">MCQ Practice Questions</p></div>
+            <div class="stat-card"><p class="stat-card-text">Short Cases</p></div>
+            <div class="stat-card"><p class="stat-card-text">Core Cases</p></div>
+            <div class="stat-card"><p class="stat-card-text">100% Free Access</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">MCQ</div>
+            <div class="stat-label">Practice Questions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Short</div>
+            <div class="stat-label">Cases</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Core</div>
+            <div class="stat-label">Cases</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free Access</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- External Reference Link -->
+    <div class="container" style="text-align: center; margin-top: 2rem; margin-bottom: 1.5rem;">
+      <a href="https://edir.myebr.org/educational-resources" target="_blank" rel="noopener noreferrer" 
+         style="display: inline-block; font-size: 1.3rem; font-weight: 700; padding: 1rem 2.5rem; background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); transition: transform 0.2s, box-shadow 0.2s;">
+        📋 Official EDiR Educational Resources &rarr;
+      </a>
+    </div>
+
+    <!-- ==================== MCQ SECTION ==================== -->
+    <section class="section section-edir-written" id="mcq-section">
+      <div class="container">
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-edir-written">MCQ</span>
+          <h2 class="section-title text-center">MCQ Questions</h2>
+          <p class="section-subtitle">Sample Multiple Response (MRQ) questions with detailed answers and explanations to help you prepare for the written component of your EDiR Diploma exam.</p>
+        </div>
+        <MRQ
+          sectionId="mcq-sample"
+          title="Sample MCQ Question"
+          subtitle="Live practice question in the Multiple Response format with answer and explanation"
+        />
+      </div>
+    </section>
+
+    <!-- Exam Divider -->
+    <div class="exam-divider">
+      <div class="exam-divider-line"></div>
+      <span class="exam-divider-label">Next Section</span>
+      <div class="exam-divider-line"></div>
+    </div>
+
+    <!-- ==================== SHORT CASES SECTION ==================== -->
+    <section class="section section-edir-written" id="short-cases-section">
+      <div class="container">
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-edir-written">Short Cases</span>
+          <h2 class="section-title text-center">Short Cases</h2>
+          <p class="section-subtitle">Sample Short Cases questions with detailed answers and explanations to build your clinical reasoning skills.</p>
+        </div>
+
+        <Shortcases questions={[
+  {
+    number: 1.1,
+    stem: 'Concerning/In [Insert Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement 1]' },
+      { label: 'b', text: '[Statement 2]' },
+      { label: 'c', text: '[Statement 3]' },
+      { label: 'd', text: '[Statement 4]' },
+      { label: 'e', text: '[Statement 5]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Incorrect', correct: false },
+      { label: 'c', text: 'Correct Best Answer', correct: true },
+      { label: 'd', text: 'Incorrect', correct: false },
+      { label: 'e', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 1.2,
+    stem: 'Concerning/In [Insert Another Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement A]' },
+      { label: 'b', text: '[Statement B]' },
+      { label: 'c', text: '[Statement C]' },
+      { label: 'd', text: '[Statement D]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Correct Best Answer', correct: true },
+      { label: 'c', text: 'Incorrect', correct: false },
+      { label: 'd', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 1.3,
+    stem: 'Describe in your own words the key principles underlying [Insert Topic Here]:',
+    statements: [],
+    answers: [],
+    explanation: '[Insert a model answer or key points that should be covered in the free-text response.]',
+    freeText: true,
+  },
+]} />
+      </div>
+    </section>
+
+    <!-- Exam Divider -->
+    <div class="exam-divider">
+      <div class="exam-divider-line"></div>
+      <span class="exam-divider-label">Next Section</span>
+      <div class="exam-divider-line"></div>
+    </div>
+
+    <!-- ==================== CORE CASES SECTION ==================== -->
+    <section class="section section-edir-core" id="core-cases-section">
+      <div class="container">
+        <div class="exam-header">
+          <span class="exam-badge exam-badge-edir-core">Core Cases</span>
+          <h2 class="section-title text-center">Core Cases</h2>
+          <p class="section-subtitle">Sample Core Cases questions with detailed clinical reasoning and explanations to prepare for the oral component of your EDiR Diploma exam.</p>
+        </div>
+        <Corecases questions={[
+  {
+    number: 1.1,
+    stem: 'Concerning/In [Insert Core Case Topic or Core Statement Here]: may have DICOM or .jpg/.png image references',
+    statements: [
+      { label: 'a', text: '[Statement 1]' },
+      { label: 'b', text: '[Statement 2]' },
+      { label: 'c', text: '[Statement 3]' },
+      { label: 'd', text: '[Statement 4]' },
+      { label: 'e', text: '[Statement 5]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Incorrect', correct: false },
+      { label: 'c', text: 'Correct Best Answer', correct: true },
+      { label: 'd', text: 'Incorrect', correct: false },
+      { label: 'e', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 1.2,
+    stem: 'Concerning/In [Insert Another Core Case Topic or Core Statement Here]: / may include .jpg or .png images',
+    statements: [
+      { label: 'a', text: '[Statement A]' },
+      { label: 'b', text: '[Statement B]' },
+      { label: 'c', text: '[Statement C]' },
+      { label: 'd', text: '[Statement D]' },
+    ],
+    answers: [
+      { label: 'a', text: 'Incorrect', correct: false },
+      { label: 'b', text: 'Correct Best Answer', correct: true },
+      { label: 'c', text: 'Incorrect', correct: false },
+      { label: 'd', text: 'Incorrect', correct: false },
+    ],
+    explanation: '[Insert the detailed principle here. Explain why the correct option is the best choice and why the other options are incorrect or less accurate.]',
+    freeText: false,
+  },
+  {
+    number: 1.3,
+    stem: 'Describe in your own words the key principles underlying [Insert Topic Here]:',
+    statements: [],
+    answers: [],
+    explanation: '[Insert a model answer or key points that should be covered in the free-text response.]',
+    freeText: true,
+  },
+]} />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
